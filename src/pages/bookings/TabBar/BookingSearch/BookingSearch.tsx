@@ -9,7 +9,7 @@ const BookingSearch = () => {
   };
 
   return (
-    <div className="">
+    <div className="container ">
       <div className="bg-info-subtle mx-auto py-5 rounded row shadow-sm">
         <div className="col-md-4 my-1">
           <div className="position-relative ">
@@ -58,6 +58,9 @@ const BookingSearch = () => {
                 style={{ width: "100%" }}
                 addonBefore="Rooms"
               />
+              <Button className="mt-1" onClick={toggleSection}>
+                Ok
+              </Button>
             </div>
           )}
         </div>

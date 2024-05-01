@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@100..900&display=swap');
+
+
+
+
+
+
 .bed-icon {
     position: absolute;
     z-index: 2;
@@ -5,6 +12,23 @@
     font-size: 22px;
     right: 12px;
     opacity: .3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+button,
+span,
+input,
+textarea,
+a,
+.ant-btn {
+    font-family: "Murecho", sans-serif;
 }
 
 :where(.css-dev-only-do-not-override-kghr11).ant-picker .ant-picker-suffix {
