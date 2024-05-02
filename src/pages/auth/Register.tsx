@@ -1,5 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Form, Input, Button } from "antd";
+
+interface FormValues {
+  email: string;
+  password: string;
+  retypePassword: string;
+}
 
 const Register = () => {
   const [form] = Form.useForm();
@@ -7,9 +13,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [retypePassword, setRetypePassword] = useState("");
 
-  const onFinish = (values) => {
+  const onFinish = (values: FormValues) => {
     console.log("Received values:", values);
-    // You can add your logic for form submission here
   };
 
   return (

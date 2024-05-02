@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Input, Button, Checkbox } from "antd"; // Import Ant Design components
+import { Input, Button, Checkbox } from "antd";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Log values after submission
     console.log("Username:", username);
@@ -55,7 +55,7 @@ const Login = () => {
             </div>
             <div className="d-flex justify-content-between mb-3">
               <div className="form-group">
-                <Checkbox id="rememberMe">Remember me</Checkbox>
+                <Checkbox>Remember me</Checkbox>
               </div>
               <div>
                 <Link to={"reset"}> Reset password</Link>

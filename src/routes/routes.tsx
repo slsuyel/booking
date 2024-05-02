@@ -4,6 +4,7 @@ import Errorpage from "../components/ui/Errorpage";
 import Login from "./../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import Home from "../pages/Home/Home";
+import SearchResult from "../pages/bookings/SearchResult/SearchResult";
 
 const router = createBrowserRouter([
   {
@@ -24,27 +25,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
-      // {
-      //   path: "/search-res",
-      //   element: <SearchPage />,
-      // },
-      // {
-      //   path: "/help",
-      //   element: <Help />,
-      // },
-      // {
-      //   path: "/pricing",
-      //   element: <Pricing />,
-      // },
-
-      // {
-      //   path: "/profile",
-      //   element: <LoggedProfile />,
-      // },
-      // {
-      //   path: "/profile/dashboard",
-      //   element: <UserDashboard />,
-      // },
+      {
+        path: "/hotel-search",
+        element: <SearchResult />,
+      },
     ],
   },
 

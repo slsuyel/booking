@@ -36,3 +36,10 @@ export type MessageModel = {
   direction: string; // Add direction property
   position: number; // Add position property
 };
+
+export interface CitySearch {
+  city: string;
+  country: string;
+}
+
+export type DateRange = [string, string];
