@@ -1,13 +1,19 @@
 import { Button, Result } from "antd";
 import { ResultStatusType } from "antd/es/result";
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { useNavigate, useRouteError } from "react-router-dom";
 
 interface ErrorpageProps {
-  status: ResultStatusType; // Use the ResultStatusType directly
+  status: ResultStatusType;
 }
 
 const Errorpage: React.FC<ErrorpageProps> = ({ status }) => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const error = useRouteError() as { statusText?: string; message?: string }; // Type assertion
 
   console.error(error);
@@ -26,7 +32,7 @@ const Errorpage: React.FC<ErrorpageProps> = ({ status }) => {
               </>
             }
             extra={
-              <Button type="primary" href="/">
+              <Button type="primary" onClick={handleGoBack}>
                 Back Home
               </Button>
             }

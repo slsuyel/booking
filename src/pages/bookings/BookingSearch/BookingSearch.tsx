@@ -106,6 +106,20 @@ const BookingSearch = () => {
       checkIn: searchValue.checkIn,
       checkOut: searchValue.checkOut,
     }).toString();
+
+    const recentSearch = {
+      location: searchValue.location,
+      dates: [searchValue.checkIn, searchValue.checkOut],
+      people: searchValue.adults + searchValue.children,
+    };
+
+    const recentSearchesString = localStorage.getItem("recentSearches");
+    const recentSearches = recentSearchesString
+      ? JSON.parse(recentSearchesString)
+      : [];
+    recentSearches.unshift(recentSearch);
+    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+
     navigate(`/hotel-search?${params}`);
   };
 

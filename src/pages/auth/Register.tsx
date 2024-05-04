@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
+import logo from "../../assets/icons/googlelogin.svg";
 
 interface FormValues {
   email: string;
@@ -17,10 +18,16 @@ const Register = () => {
     console.log("Received values:", values);
   };
 
+  // Function to handle Google login
+  const handleGoogleLogin = () => {
+    // Implement Google OAuth logic here
+    console.log("Login with Google clicked");
+  };
+
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
-        <div className="col-md-6 card  shadow-lg">
+        <div className="col-md-6 card shadow-lg">
           <Form form={form} onFinish={onFinish} layout="vertical">
             <h3 className="control-label text-center text-info-emphasis my-3">
               Sign in or create an account
@@ -84,6 +91,16 @@ const Register = () => {
               <Button type="primary" htmlType="submit">
                 Register
               </Button>
+            </Form.Item>
+
+            <Form.Item className="text-center">
+              <img
+                draggable={false}
+                className="handleGoogleLogin"
+                src={logo}
+                onClick={handleGoogleLogin}
+                alt="handleGoogleLogin"
+              />
             </Form.Item>
           </Form>
         </div>

@@ -1,4 +1,6 @@
 import BookingSearch from "../bookings/BookingSearch/BookingSearch";
+import Offers from "../bookings/Offers/Offers";
+import RecentSearch from "../bookings/RecentSearch/RecentSearch";
 
 const Home = () => {
   return (
@@ -11,6 +13,10 @@ const Home = () => {
       </div>
 
       <BookingSearch />
+
+      <RecentSearch />
+
+      <Offers />
     </div>
   );
 };

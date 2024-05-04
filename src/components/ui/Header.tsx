@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Button, Drawer } from "antd";
+import { Button, Drawer, Switch } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { SoundOutlined } from "@ant-design/icons";
 
@@ -79,6 +79,11 @@ const Header = () => {
               </NavLink>
             ))}
             <SoundOutlined />
+            <Switch
+              checkedChildren={<i className="fas fa-sun"></i>}
+              unCheckedChildren={<i className="fas fa-moon"></i>}
+              defaultChecked
+            />
           </Navbar.Collapse>
         </Container>
       </Navbar>
