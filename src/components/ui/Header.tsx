@@ -56,9 +56,9 @@ const Header = () => {
       <Navbar
         expand="lg"
         fixed={isFixed ? "top" : undefined}
-        className={`border-bottom p-0 py-2 font-maven ${isFixed ? "" : ""} ${
-          isMobile ? "d-none" : "d-block"
-        }`}
+        className={`border-bottom p-0 py-2 font-maven ${
+          isFixed ? "header-bg-fix" : ""
+        } ${isMobile ? "d-none" : "d-block"}`}
       >
         <Container>
           <Navbar.Brand href="/" className="p-0 ">

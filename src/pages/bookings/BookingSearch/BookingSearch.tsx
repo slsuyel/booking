@@ -1,22 +1,29 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import {
   Button,
   Checkbox,
   InputNumber,
   Select,
-  message,
+  // message,
   DatePicker,
 } from "antd";
-import { CitySearch } from "../../../../types/types";
+const { RangePicker } = DatePicker;
+import { CitySearch } from "../../../types/types";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import { useNavigate } from "react-router-dom";
+import { Dayjs } from "dayjs";
 
 const { Option } = Select;
 
 const BookingSearch = () => {
   const navigate = useNavigate();
   const [isSectionOpen, setIsSectionOpen] = useState(false);
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState<CitySearch[]>([]);
+  const [dates, setDates] = useState<[Dayjs | null, Dayjs | null]>([
+    null,
+    null,
+  ]);
 
   const [searchValue, setSearchValue] = useState({
     location: "",
@@ -24,7 +31,8 @@ const BookingSearch = () => {
     children: 0,
     rooms: 1,
     entireHome: false,
-    dateRange: [],
+    checkIn: "",
+    checkOut: "",
   });
 
   useEffect(() => {
@@ -45,6 +53,16 @@ const BookingSearch = () => {
 
   const toggleSection = () => {
     setIsSectionOpen(!isSectionOpen);
+  };
+  const handleDateChange = (dates: [Dayjs | null, Dayjs | null]) => {
+    setDates(dates);
+    if (dates[0] && dates[1]) {
+      setSearchValue({
+        ...searchValue,
+        checkIn: dates[0].format("YYYY-MM-DD"),
+        checkOut: dates[1].format("YYYY-MM-DD"),
+      });
+    }
   };
 
   const handleLocationChange = (value: string) => {
@@ -74,19 +92,14 @@ const BookingSearch = () => {
   };
 
   const handleSearch = () => {
-    if (!searchValue.dateRange.length) {
-      console.error("Date Range is empty. Please provide valid dates.");
-      message.error("Please provide all fields");
-      return;
-    }
-    const dateRangeString = searchValue.dateRange.join(",");
     const params = new URLSearchParams({
       location: searchValue.location,
-      dateRange: dateRangeString,
       adults: searchValue.adults.toString(),
       children: searchValue.children.toString(),
       rooms: searchValue.rooms.toString(),
-      entireHome: searchValue.entireHome.toString(),
+      entireHome: searchValue.entireHome ? "true" : "false",
+      checkIn: searchValue.checkIn,
+      checkOut: searchValue.checkOut,
     }).toString();
     navigate(`/hotel-search?${params}`);
   };
@@ -113,15 +126,14 @@ const BookingSearch = () => {
           <i className="fa-solid fa-bed bed-icon"></i>
         </div>
       </div>
-      <div className="col-md-3 my-1">
-        <DatePicker.RangePicker
-          onChange={(dateStrings) =>
-            setSearchValue({ ...searchValue, dateRange: dateStrings })
-          }
-          format="YYYY-MM-DD"
-        />
+      <div className="col-md-3 text-center  my-1">
+        <RangePicker
+          className="p-2"
+          value={dates}
+          onChange={handleDateChange as any}
+        />{" "}
       </div>
-      <div className="col-md-3 my-1 position-relative">
+      <div className="col-md-3 text-center  my-1 position-relative">
         <Button
           size="large"
           type="primary"

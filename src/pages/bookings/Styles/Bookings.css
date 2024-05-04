@@ -1,0 +1,74 @@
+.modify-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        opacity 0.5s ease;
+}
+
+.modify-container.open {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+
+.hotel-card {
+    background: #f0f6ff;
+    border-radius: 13px;
+    margin: 32px 0px;
+    border: 2px solid #a6cfec;
+    box-shadow: 0 0 8px #a3d7fc;
+    padding: 18px 0px;
+}
+
+.room-limit {
+    color: red;
+    font-size: 14px;
+
+}
+
+
+
+
+.htl-features {
+    margin-top: 3px;
+    color: green;
+    font-size: 14px;
+}
+
+.htl-features ul li {
+    list-style: none;
+    list-style-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000' width='16' height='16'><path d='M12.644 4.293l-6.05 6.03-3.112-3.127-1.392 1.392 4.5 4.5 7.442-7.458z'/></svg>");
+    margin-left: 1em;
+}
+
+
+.hotel-star {
+    font-size: 11px;
+    color: darkcyan;
+}
+
+.booking-price {
+    line-height: 22px;
+    text-align: end;
+    padding-right: 5px;
+}
+
+
+
+.booking-price h6 {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.booking-price p {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.booking-price span {
+    font-size: 13px;
+    font-style: italic;
+    color: #5e5c60;
+}

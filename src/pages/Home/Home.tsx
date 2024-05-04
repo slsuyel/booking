@@ -1,4 +1,4 @@
-import BookingSearch from "../bookings/TabBar/BookingSearch/BookingSearch";
+import BookingSearch from "../bookings/BookingSearch/BookingSearch";
 
 const Home = () => {
   return (
