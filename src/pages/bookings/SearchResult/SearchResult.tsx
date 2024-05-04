@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import BookingSearch from "../BookingSearch/BookingSearch";
 import { Button } from "antd";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HotelCard from "./HotelCard";
 import FilterSearch from "./FilterSearch";
 import "../Styles/Bookings.css";
@@ -17,36 +17,14 @@ const SearchResult = () => {
   const checkOut = searchParams.get("checkOut");
   const [modify, setModify] = useState(false);
 
-  // UseEffect to update modify state based on URL parameters
-  useEffect(() => {
-    if (
-      locationValue ||
-      adultsValue ||
-      childrenValue ||
-      roomsValue ||
-      checkIn ||
-      checkOut
-    ) {
-      setModify(true);
-    }
-  }, [
-    locationValue,
-    adultsValue,
-    childrenValue,
-    roomsValue,
-    checkIn,
-    checkOut,
-  ]);
-
   return (
     <div className="my-5">
       <div className="align-items-center container d-flex justify-content-between p-3 shadow">
         <div>
           <h4>{locationValue}</h4>
           <p>
-            {/* Display check-in and check-out dates */}
-            {checkIn && checkOut && `${checkIn} to ${checkOut}`}{" "}
-            {adultsValue + childrenValue} Persons - {roomsValue} Rooms
+            {checkIn} to {checkOut}, {adultsValue + childrenValue} Persons -{" "}
+            {roomsValue} Rooms
           </p>
         </div>
         <div>
@@ -55,15 +33,9 @@ const SearchResult = () => {
           </Button>
         </div>
       </div>
-      <div
-        className={`my-3 container w-100 modify-container ${
-          modify ? "open" : "closed"
-        }`}
-      >
-        <div>
-          <BookingSearch />
-        </div>
-      </div>
+
+      <div className="container mt-3">{modify && <BookingSearch />}</div>
+
       <div className="row mx-auto container ">
         <div className="col-md-3">
           <FilterSearch />

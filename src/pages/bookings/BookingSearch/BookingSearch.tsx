@@ -5,7 +5,7 @@ import {
   Checkbox,
   InputNumber,
   Select,
-  // message,
+  message,
   DatePicker,
 } from "antd";
 const { RangePicker } = DatePicker;
@@ -92,6 +92,11 @@ const BookingSearch = () => {
   };
 
   const handleSearch = () => {
+    if (!dates[0] || !dates[1] || !cities.length) {
+      message.error("Please select dates and location");
+      return;
+    }
+
     const params = new URLSearchParams({
       location: searchValue.location,
       adults: searchValue.adults.toString(),
