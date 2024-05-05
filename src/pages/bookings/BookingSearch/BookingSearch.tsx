@@ -145,12 +145,17 @@ const BookingSearch = () => {
           <i className="fa-solid fa-bed bed-icon"></i>
         </div>
       </div>
-      <div className="col-md-3 text-center  my-1">
+      <div className="col-md-3 mx-auto  text-center  my-1">
         <RangePicker
+          showTime={{ format: "HH" }}
+          format="YYYY-MM-DD"
           className="p-2"
           value={dates}
           onChange={handleDateChange as any}
-        />{" "}
+          disabledDate={(current) =>
+            current && current.startOf("day").isBefore(new Date())
+          }
+        />
       </div>
       <div className="col-md-3 text-center  my-1 position-relative">
         <Button
@@ -159,8 +164,8 @@ const BookingSearch = () => {
           className="ant-btn-lg ant-btn-primary ant-input ant-input-outlined css-dev-only-do-not-override-kghr11 text-secondary toggle-btn-child-adult"
           onClick={toggleSection}
         >
-          {searchValue.adults} adult · {searchValue.children} children ·{" "}
-          {searchValue.rooms} room <i className="fa-solid fa-person ms-2"></i>
+          {searchValue.adults} Adult · {searchValue.children} Children ·{" "}
+          {searchValue.rooms} Room <i className="fa-solid fa-person ms-2"></i>
         </Button>
         {isSectionOpen && (
           <div

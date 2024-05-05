@@ -8,7 +8,7 @@ const Offers = () => {
   const settings = {
     dots: true,
     infinite: false,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
@@ -60,6 +60,21 @@ const Offers = () => {
       title: "New offer 2",
       img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
       des: "Description 2",
+    },
+    {
+      title: "New offer 1",
+      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
+      des: "Description 1",
+    },
+    {
+      title: "New offer 1",
+      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
+      des: "Description 1",
+    },
+    {
+      title: "New offer 1",
+      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
+      des: "Description 1",
     },
     {
       title: "New offer 1",
