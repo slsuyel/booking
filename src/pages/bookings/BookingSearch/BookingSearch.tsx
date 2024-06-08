@@ -161,10 +161,12 @@ const BookingSearch = () => {
         <Button
           size="large"
           type="primary"
+        
+       
           className="ant-btn-lg ant-btn-primary ant-input ant-input-outlined css-dev-only-do-not-override-kghr11 text-secondary toggle-btn-child-adult"
           onClick={toggleSection}
         >
-          {searchValue.adults} Adult · {searchValue.children} Children ·{" "}
+          {searchValue.adults} Adult· {searchValue.children} Children ·{" "}
           {searchValue.rooms} Room <i className="fa-solid fa-person ms-2"></i>
         </Button>
         {isSectionOpen && (
