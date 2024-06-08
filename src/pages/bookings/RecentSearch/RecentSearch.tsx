@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const RecentSearch = () => {
   const defaultRecentSearches = [
     {
-      location: "New York",
-      dates: ["May 4", "May 5"],
+      location: 'New York',
+      dates: ['May 4', 'May 5'],
       people: 2,
     },
     {
-      location: "Dhaka",
-      dates: ["May 4", "May 5"],
+      location: 'Dhaka',
+      dates: ['May 4', 'May 5'],
       people: 2,
     },
     {
       location: "Cox's Bazar",
-      dates: ["May 4", "May 5"],
+      dates: ['May 4', 'May 5'],
       people: 2,
     },
   ];
@@ -23,7 +23,7 @@ const RecentSearch = () => {
   const [recentSearches, setRecentSearches] = useState(defaultRecentSearches);
 
   useEffect(() => {
-    const savedRecentSearches = localStorage.getItem("recentSearches");
+    const savedRecentSearches = localStorage.getItem('recentSearches');
     if (savedRecentSearches) {
       setRecentSearches(JSON.parse(savedRecentSearches));
     }
@@ -38,9 +38,9 @@ const RecentSearch = () => {
         const params = new URLSearchParams({
           location: search.location,
           adults: search.people.toString(), // Assuming 'people' refers to adults here
-          children: "0", // Assuming no children in recent searches
-          rooms: "1", // Assuming 1 room for simplicity
-          entireHome: "false", // Default to false
+          children: '0', // Assuming no children in recent searches
+          rooms: '1', // Assuming 1 room for simplicity
+          addCar: 'false', // Default to false
           checkIn: search.dates[0], // Assuming the first date in 'dates' is check-in
           checkOut: search.dates[1], // Assuming the second date in 'dates' is check-out
         }).toString();
@@ -64,7 +64,7 @@ const RecentSearch = () => {
                   </p>
                   <p className="mb-0">
                     <i className="fa-solid fa-calendar-days"></i>
-                    <span className="ms-2">{search.dates.join("-")}</span>
+                    <span className="ms-2">{search.dates.join('-')}</span>
                   </p>
                   <p className="mb-0">
                     <i className="fa-solid fa-users-line"></i>

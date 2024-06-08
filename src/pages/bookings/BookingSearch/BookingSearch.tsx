@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -7,12 +7,12 @@ import {
   Select,
   message,
   DatePicker,
-} from "antd";
+} from 'antd';
 const { RangePicker } = DatePicker;
-import { CitySearch } from "../../../types/types";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
-import { useNavigate } from "react-router-dom";
-import { Dayjs } from "dayjs";
+import { CitySearch } from '../../../types/types';
+import { CheckboxChangeEvent } from 'antd/es/checkbox';
+import { useNavigate } from 'react-router-dom';
+import { Dayjs } from 'dayjs';
 
 const { Option } = Select;
 
@@ -26,25 +26,25 @@ const BookingSearch = () => {
   ]);
 
   const [searchValue, setSearchValue] = useState({
-    location: "",
+    location: '',
     adults: 1,
     children: 0,
     rooms: 1,
-    entireHome: false,
-    checkIn: "",
-    checkOut: "",
+    addCar: false,
+    checkIn: '',
+    checkOut: '',
   });
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://countriesnow.space/api/v0.1/countries/population/cities"
+          'https://countriesnow.space/api/v0.1/countries/population/cities'
         );
         const data = await response.json();
         setCities(data.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     }
 
@@ -59,8 +59,8 @@ const BookingSearch = () => {
     if (dates[0] && dates[1]) {
       setSearchValue({
         ...searchValue,
-        checkIn: dates[0].format("YYYY-MM-DD"),
-        checkOut: dates[1].format("YYYY-MM-DD"),
+        checkIn: dates[0].format('YYYY-MM-DD'),
+        checkOut: dates[1].format('YYYY-MM-DD'),
       });
     }
   };
@@ -88,12 +88,12 @@ const BookingSearch = () => {
   };
 
   const handleEntireHomeChange = (e: CheckboxChangeEvent) => {
-    setSearchValue({ ...searchValue, entireHome: e.target.checked });
+    setSearchValue({ ...searchValue, addCar: e.target.checked });
   };
 
   const handleSearch = () => {
     if (!dates[0] || !dates[1] || !cities.length) {
-      message.error("Please select dates and location");
+      message.error('Please select dates and location');
       return;
     }
 
@@ -102,7 +102,7 @@ const BookingSearch = () => {
       adults: searchValue.adults.toString(),
       children: searchValue.children.toString(),
       rooms: searchValue.rooms.toString(),
-      entireHome: searchValue.entireHome ? "true" : "false",
+      addCar: searchValue.addCar ? 'true' : 'false',
       checkIn: searchValue.checkIn,
       checkOut: searchValue.checkOut,
     }).toString();
@@ -113,31 +113,31 @@ const BookingSearch = () => {
       people: searchValue.adults + searchValue.children,
     };
 
-    const recentSearchesString = localStorage.getItem("recentSearches");
+    const recentSearchesString = localStorage.getItem('recentSearches');
     const recentSearches = recentSearchesString
       ? JSON.parse(recentSearchesString)
       : [];
     recentSearches.unshift(recentSearch);
-    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
 
     navigate(`/hotel-search?${params}`);
   };
 
   return (
-    <div className="bg-info-subtle mx-auto py-5 rounded row w-100  shadow-sm">
-      <div className="col-md-4 my-1">
+    <div className=" mx-auto rounded row w-100  py-3">
+      <div className="col-md-12 my-2">
         <div className="position-relative ">
           <Select
             showSearch
             className="p3selc"
-            placeholder="Select a location"
+            placeholder="Where to go?"
             optionFilterProp="children"
             onChange={handleLocationChange}
-            style={{ width: "100%", height: 40 }}
+            style={{ width: '100%', height: 50 }}
           >
             {cities.map((city: CitySearch) => (
               <Option key={city.city} value={city.city}>
-                <i className="fa-solid fa-location-dot"></i> {city.city},{" "}
+                <i className="fa-solid fa-location-dot"></i> {city.city},{' '}
                 {city.country}
               </Option>
             ))}
@@ -145,74 +145,88 @@ const BookingSearch = () => {
           <i className="fa-solid fa-bed bed-icon"></i>
         </div>
       </div>
-      <div className="col-md-3 mx-auto  text-center  my-1">
+      <div className="col-md-6  mx-auto  dt-range-picker  my-2">
         <RangePicker
-          showTime={{ format: "HH" }}
+          style={{ width: '100%', height: 50 }}
+          inputReadOnly
           format="YYYY-MM-DD"
           className="p-2"
           value={dates}
           onChange={handleDateChange as any}
-          disabledDate={(current) =>
-            current && current.startOf("day").isBefore(new Date())
+          disabledDate={current =>
+            current && current.startOf('day').isBefore(new Date())
           }
         />
       </div>
-      <div className="col-md-3 text-center  my-1 position-relative">
+      <div className="col-md-6   my-2 position-relative">
         <Button
+          style={{ width: '100%', height: 50 }}
           size="large"
           type="primary"
-        
-       
-          className="ant-btn-lg ant-btn-primary ant-input ant-input-outlined css-dev-only-do-not-override-kghr11 text-secondary toggle-btn-child-adult"
+          className="ant-btn-lg ant-btn-primary ant-input ant-input-outlined css-dev-only-do-not-override-kghr11 text-secondary toggle-btn-child-adult w-100"
           onClick={toggleSection}
         >
-          {searchValue.adults} Adult· {searchValue.children} Children ·{" "}
+          {searchValue.adults} Adult· {searchValue.children} Children ·{' '}
           {searchValue.rooms} Room <i className="fa-solid fa-person ms-2"></i>
         </Button>
         {isSectionOpen && (
           <div
             className="card p-3 mt-2 position-absolute w-100"
-            style={{ zIndex: "200", top: "calc(60% + 10px)", left: "0" }}
+            style={{ zIndex: '200', top: 'calc(60% + 20px)', left: '30px' }}
           >
             <InputNumber
               defaultValue={searchValue.adults}
               min={0}
-              style={{ width: "100%", marginBottom: "8px" }}
+              style={{ width: '100%', marginBottom: '8px' }}
               addonBefore="Adults"
               onChange={handleAdultsChange}
             />
             <InputNumber
               defaultValue={searchValue.children}
               min={0}
-              style={{ width: "100%", marginBottom: "8px" }}
+              style={{ width: '100%', marginBottom: '8px' }}
               addonBefore="Children"
               onChange={handleChildrenChange}
             />
             <InputNumber
               defaultValue={searchValue.rooms}
               min={0}
-              style={{ width: "100%" }}
+              style={{ width: '100%' }}
               addonBefore="Rooms"
               onChange={handleRoomsChange}
             />
-            <Button onClick={toggleSection}>Ok</Button>
+            <Button className="mt-2" onClick={toggleSection}>
+              Ok
+            </Button>
           </div>
         )}
       </div>
-      <div className="col-md-2 my-1">
+      <div className="col-md-6 my-2 my-auto">
+        <div
+          className="align-items-center border d-flex gap-1 ps-4 rounded text-primary"
+          style={{ height: 50 }}
+        >
+          Bundle + Save <Checkbox onChange={handleEntireHomeChange}></Checkbox>{' '}
+          Add a car
+        </div>
+      </div>
+      <div className="col-md-6 my-2">
         <Button
+          style={{ width: '100%', height: 50 }}
           size="large"
           type="primary"
-          className="w-100"
+          className="w-100 shimmer"
           onClick={handleSearch}
         >
-          Search
+          Find Your Hotel
         </Button>
       </div>
-      <div className=" my-1">
-        <Checkbox onChange={handleEntireHomeChange}>
-          I'm looking for an entire home or apartment
-        </Checkbox>
+
+      <div className="mt-4">
+        <hr />
+        <h6 className="text-center mb-0">
+          Book all of your hotels at once and save up to $625
+        </h6>
       </div>
     </div>
   );

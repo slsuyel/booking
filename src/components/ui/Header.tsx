@@ -1,11 +1,11 @@
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Button, Drawer, Switch } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
-import { SoundOutlined } from "@ant-design/icons";
+import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Button, Drawer, Switch } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import { SoundOutlined } from '@ant-design/icons';
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -29,36 +29,66 @@ const Header = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
     handleResize();
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const menuItems = [
     {
       id: 1,
-      label: "Login",
-      link: "/login",
+      label: 'Login',
+      link: '/login',
     },
     {
       id: 2,
-      label: "Register",
-      link: "/register",
+      label: 'Register',
+      link: '/register',
     },
+    // {
+    //   id: 3,
+    //   label: 'Hotels',
+    //   link: '/hotels',
+    // },
+    // {
+    //   id: 4,
+    //   label: 'Cars',
+    //   link: '/cars',
+    // },
+    // {
+    //   id: 5,
+    //   label: 'Flights',
+    //   link: '/flights',
+    // },
+    // {
+    //   id: 6,
+    //   label: 'Bundle + Save',
+    //   link: '/bundle-save',
+    // },
+    // {
+    //   id: 7,
+    //   label: 'Cruises',
+    //   link: '/cruises',
+    // },
+    // {
+    //   id: 8,
+    //   label: 'Experiences',
+    //   link: '/experiences',
+    // },
   ];
 
   return (
     <>
       <Navbar
         expand="lg"
-        fixed={isFixed ? "top" : undefined}
-        className={`border-bottom p-0 py-2 font-maven ${
-          isFixed ? "header-bg-fix" : ""
-        } ${isMobile ? "d-none" : "d-block"}`}
+        fixed={isFixed ? 'top' : undefined}
+        className={`border-bottom p-0 py-3 font-maven ${
+          isFixed ? 'header-bg-fix' : ''
+        } ${isMobile ? 'd-none' : 'd-block'}`}
       >
         <Container>
           <Navbar.Brand href="/" className="p-0 ">
@@ -73,7 +103,7 @@ const Header = () => {
             id="basic-navbar-nav "
             className="justify-content-end fs-5 fw-semibold gap-3"
           >
-            {menuItems.map((item) => (
+            {menuItems.map(item => (
               <NavLink key={item.id} to={item.link} className="nav-link ">
                 {item.label}
               </NavLink>
@@ -104,12 +134,12 @@ const Header = () => {
           </div>
 
           <Drawer
-            style={{ backgroundColor: "#be93b6", width: "60%" }}
+            style={{ backgroundColor: '#be93b6', width: '60%' }}
             placement="left"
             onClose={onClose}
             open={MobileMenu}
           >
-            {menuItems.map((item) => (
+            {menuItems.map(item => (
               <NavLink key={item.id} to={item.link} className="nav-link ">
                 {item.label}
               </NavLink>
