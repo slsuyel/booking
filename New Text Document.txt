@@ -1,0 +1,1 @@
+https://api.sharetrip.net/api/v1/hotel/search/property?keyword=
