@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Slider from "react-slick";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 
 const Offers = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -42,54 +42,54 @@ const Offers = () => {
 
   const data = [
     {
-      title: "New offer 1",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 1",
+      title: 'New offer 1',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 1',
     },
     {
-      title: "New offer 2",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 2",
+      title: 'New offer 2',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 2',
     },
     {
-      title: "New offer 1",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 1",
+      title: 'New offer 1',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 1',
     },
     {
-      title: "New offer 2",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 2",
+      title: 'New offer 2',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 2',
     },
     {
-      title: "New offer 1",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 1",
+      title: 'New offer 1',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 1',
     },
     {
-      title: "New offer 1",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 1",
+      title: 'New offer 1',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 1',
     },
     {
-      title: "New offer 1",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 1",
+      title: 'New offer 1',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 1',
     },
     {
-      title: "New offer 1",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 1",
+      title: 'New offer 1',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 1',
     },
     {
-      title: "New offer 2",
-      img: "https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg",
-      des: "Description 2",
+      title: 'New offer 2',
+      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
+      des: 'Description 2',
     },
   ];
 
   return (
-    <div className="offers-container">
+    <div className="offers-container mx-auto">
       <h6 className="offers-heading">Exclusive Offers</h6>
       <div className="slider-container">
         <Slider {...settings}>
@@ -107,12 +107,12 @@ const Offers = () => {
                 />
                 <div
                   className={`card-body-slider ${
-                    hoveredIndex === index ? "open" : ""
+                    hoveredIndex === index ? 'open' : ''
                   }`}
                 >
                   <h5 className="card-slider-title">{item.title}</h5>
                   <p className="card-slider-text">{item.des}</p>
-                  <Link to={""} className="card-slider-link">
+                  <Link to={''} className="card-slider-link">
                     View Details
                   </Link>
                 </div>

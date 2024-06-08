@@ -210,16 +210,11 @@ const BookingSearch = () => {
           Add a car
         </div>
       </div>
-      <div className="col-md-6 my-2">
-        <Button
-          style={{ width: '100%', height: 50 }}
-          size="large"
-          type="primary"
-          className="w-100 shimmer"
-          onClick={handleSearch}
-        >
-          Find Your Hotel
-        </Button>
+      <div className="col-md-6 my-2 btn_find">
+        <button style={{ width: '100%', height: 50 }} onClick={handleSearch}>
+          <div className="shimmer"></div>
+          <span className="text-black">Find Your Hotel</span>
+        </button>
       </div>
 
       <div className="mt-4">

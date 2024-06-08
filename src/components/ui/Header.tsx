@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-
+import logo from '../../assets/images/logo_example.png';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Button, Drawer, Switch } from 'antd';
@@ -92,11 +92,7 @@ const Header = () => {
       >
         <Container>
           <Navbar.Brand href="/" className="p-0 ">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png"
-              alt=""
-              width={200}
-            />
+            <img src={logo} alt="" width={200} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
@@ -122,11 +118,7 @@ const Header = () => {
         <>
           <div className="align-items-center d-flex justify-content-between p-2 bg-dark">
             <Navbar.Brand href="/" className="p-1 ">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png"
-                alt=""
-                width={120}
-              />
+              <img src={logo} alt="" width={120} />
             </Navbar.Brand>
             <Button type="primary" className="rounded-0 " onClick={showDrawer}>
               <MenuOutlined />
