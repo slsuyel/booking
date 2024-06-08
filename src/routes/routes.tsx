@@ -5,6 +5,7 @@ import Login from './../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import Home from '../pages/Home/Home';
 import SearchResult from '../pages/bookings/SearchResult/SearchResult';
+import EclipseSection from '../pages/Home/EclipseSection/EclipseSection';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/hotel-search',
         element: <SearchResult />,
+      },
+      {
+        path: '/else',
+        element: <EclipseSection />,
       },
     ],
   },
