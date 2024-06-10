@@ -1,25 +1,49 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Radio, Select, Button, InputNumber, DatePicker } from 'antd';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import {
+  Radio,
+  Select,
+  Button,
+  InputNumber,
+  DatePicker,
+  message,
+  Checkbox,
+} from 'antd';
 import { UserOutlined, TeamOutlined } from '@ant-design/icons';
 import { Dayjs } from 'dayjs';
+import useAirports from '../../../hooks/useAirports';
+import { Spinner } from 'react-bootstrap';
+import { CheckboxChangeEvent } from 'antd/es/checkbox';
 
 const { Option } = Select;
+
+interface Airport {
+  name: string;
+  country: string;
+}
 
 interface SearchValue {
   adults: number;
   children: number;
   date: string | null;
   radio: number;
+  addCar: boolean;
+  departure: string | null;
+  destination: string | null;
 }
 
-const FlightsTab: React.FC = () => {
+const FlightsTab = () => {
+  const { loading, data } = useAirports();
+
   const [isSectionOpen, setIsSectionOpen] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<SearchValue>({
     adults: 1,
     children: 0,
     date: null,
     radio: 1,
+    addCar: false,
+    departure: null,
+    destination: null,
   });
 
   const toggleSection = (): void => {
@@ -32,13 +56,15 @@ const FlightsTab: React.FC = () => {
       adults: value >= 1 ? value : 1,
     }));
   };
+  const handleAddCar = (e: CheckboxChangeEvent) => {
+    setSearchValue({ ...searchValue, addCar: e.target.checked });
+  };
 
   const handleChildrenChange = (value: number): void => {
     setSearchValue(prevState => ({ ...prevState, children: value }));
   };
 
   const handleDateChange = (date: Dayjs | null, dateString: string): void => {
-    console.log(date, dateString);
     setSearchValue(prevState => ({ ...prevState, date: dateString }));
   };
 
@@ -47,9 +73,32 @@ const FlightsTab: React.FC = () => {
     setSearchValue(prevState => ({ ...prevState, radio: radioValue }));
   };
 
-  const handleSearch = (): void => {
+  const handleDepartureChange = (value: string): void => {
+    setSearchValue(prevState => ({ ...prevState, departure: value }));
+  };
+
+  const handleDestinationChange = (value: string): void => {
+    setSearchValue(prevState => ({ ...prevState, destination: value }));
+  };
+
+  const handleSearch = () => {
+    const { departure, destination, date, adults } = searchValue;
+    if (!departure || !destination || !date || !adults) {
+      message.error('Please select all fields.');
+      return;
+    }
+
+    if (departure === destination) {
+      message.error('Departure and destination airports cannot be the same.');
+      return;
+    }
+
     console.log(searchValue);
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="row mx-auto">
@@ -74,10 +123,14 @@ const FlightsTab: React.FC = () => {
           placeholder="Departure From"
           optionFilterProp="children"
           style={{ width: '100%', height: 50, marginBottom: 16 }}
+          onChange={handleDepartureChange}
+          value={searchValue.departure}
         >
-          <Option value="DHK1">Dhaka International</Option>
-          <Option value="DHK2">Dhaka Domestic</Option>
-          <Option value="DHK3">Chittagong</Option>
+          {data.map((d: Airport) => (
+            <Option key={d.name} value={d.name}>
+              {d.name}, {d.country}
+            </Option>
+          ))}
         </Select>
       </div>
       <div className="col-md-6">
@@ -87,10 +140,14 @@ const FlightsTab: React.FC = () => {
           placeholder="Going to"
           optionFilterProp="children"
           style={{ width: '100%', height: 50, marginBottom: 16 }}
+          onChange={handleDestinationChange}
+          value={searchValue.destination}
         >
-          <Option value="JFK">New York JFK</Option>
-          <Option value="LAX">Los Angeles LAX</Option>
-          <Option value="ORD">Chicago ORD</Option>
+          {data.map((d: Airport) => (
+            <Option key={d.name} value={d.name}>
+              {d.name}, {d.country}
+            </Option>
+          ))}
         </Select>
       </div>
 
@@ -141,15 +198,20 @@ const FlightsTab: React.FC = () => {
         )}
       </div>
 
-      <div className="col-md-12 my-2">
-        <Button
-          style={{ width: '100%', height: 50 }}
-          size="large"
-          type="primary"
-          onClick={handleSearch}
+      <div className="col-md-6 my-2 my-auto">
+        <div
+          className="align-items-center border d-flex gap-1 ps-4 rounded text-primary"
+          style={{ height: 50, background: '#ddeefd' }}
         >
-          Search Flights
-        </Button>
+          Bundle + Save <Checkbox onChange={handleAddCar}></Checkbox> Add a car
+        </div>
+      </div>
+
+      <div className="col-md-6 my-2 btn_find">
+        <button onClick={handleSearch}>
+          <div className="shimmer" />
+          <span className="text-black"> Search Flights</span>
+        </button>
       </div>
     </div>
   );

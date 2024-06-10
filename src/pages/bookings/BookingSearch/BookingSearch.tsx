@@ -87,7 +87,7 @@ const BookingSearch = () => {
     }
   };
 
-  const handleEntireHomeChange = (e: CheckboxChangeEvent) => {
+  const handleAddCar = (e: CheckboxChangeEvent) => {
     setSearchValue({ ...searchValue, addCar: e.target.checked });
   };
 
@@ -204,10 +204,9 @@ const BookingSearch = () => {
       <div className="col-md-6 my-2 my-auto">
         <div
           className="align-items-center border d-flex gap-1 ps-4 rounded text-primary"
-          style={{ height: 50 }}
+          style={{ height: 50, background: '#ddeefd' }}
         >
-          Bundle + Save <Checkbox onChange={handleEntireHomeChange}></Checkbox>{' '}
-          Add a car
+          Bundle + Save <Checkbox onChange={handleAddCar}></Checkbox> Add a car
         </div>
       </div>
       <div className="col-md-6 my-2 btn_find">
