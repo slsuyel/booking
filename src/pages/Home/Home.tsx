@@ -1,4 +1,5 @@
 import SearchTab from './SearchTab';
+import RecentSearch from './../bookings/RecentSearch/RecentSearch';
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
         className="d-flex justify-content-center align-items-center"
         style={{ height: '50vh' }}
       >
-        <h1>Content is here</h1>
+        <RecentSearch />
       </div>
     </>
   );

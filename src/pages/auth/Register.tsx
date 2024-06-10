@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Form, Input, Button } from "antd";
-import logo from "../../assets/icons/googlelogin.svg";
+import { useState } from 'react';
+import { Form, Input, Button } from 'antd';
+import logo from '../../assets/icons/googlelogin.svg';
 
 interface FormValues {
   email: string;
@@ -10,18 +10,18 @@ interface FormValues {
 
 const Register = () => {
   const [form] = Form.useForm();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [retypePassword, setRetypePassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [retypePassword, setRetypePassword] = useState('');
 
   const onFinish = (values: FormValues) => {
-    console.log("Received values:", values);
+    console.log('Received values:', values);
   };
 
   // Function to handle Google login
   const handleGoogleLogin = () => {
     // Implement Google OAuth logic here
-    console.log("Login with Google clicked");
+    console.log('Login with Google clicked');
   };
 
   return (
@@ -37,16 +37,16 @@ const Register = () => {
               label="Email"
               name="email"
               rules={[
-                { required: true, message: "Please input your email!" },
+                { required: true, message: 'Please input your email!' },
                 {
-                  type: "email",
-                  message: "Please enter a valid email address!",
+                  type: 'email',
+                  message: 'Please enter a valid email address!',
                 },
               ]}
             >
               <Input
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
               />
             </Form.Item>
@@ -54,28 +54,28 @@ const Register = () => {
               label="Password"
               name="password"
               rules={[
-                { required: true, message: "Please input your password!" },
+                { required: true, message: 'Please input your password!' },
               ]}
             >
               <Input.Password
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={e => setPassword(e.target.value)}
                 placeholder="Enter your password"
               />
             </Form.Item>
             <Form.Item
               label="Retype Password"
               name="retypePassword"
-              dependencies={["password"]}
+              dependencies={['password']}
               rules={[
-                { required: true, message: "Please retype your password!" },
+                { required: true, message: 'Please retype your password!' },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
-                    if (!value || getFieldValue("password") === value) {
+                    if (!value || getFieldValue('password') === value) {
                       return Promise.resolve();
                     }
                     return Promise.reject(
-                      new Error("The two passwords do not match!")
+                      new Error('The two passwords do not match!')
                     );
                   },
                 }),
@@ -83,12 +83,12 @@ const Register = () => {
             >
               <Input.Password
                 value={retypePassword}
-                onChange={(e) => setRetypePassword(e.target.value)}
+                onChange={e => setRetypePassword(e.target.value)}
                 placeholder="Retype your password"
               />
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" size="large" htmlType="submit">
                 Register
               </Button>
             </Form.Item>

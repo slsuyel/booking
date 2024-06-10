@@ -1,7 +1,7 @@
 import './Footer.css';
 const Footer = () => {
   return (
-    <section className="main footer_section ">
+    <section className=" footer_section ">
       <div className="absolute cloud_left">
         <ul className="inline-list">
           <li className="cloud" />

@@ -7,10 +7,14 @@ import { GoToTop } from 'go-to-top-react';
 const MainLayout = () => {
   return (
     <ScrollToTop>
-      <Header />
-      <Outlet />
-      <Footer />
-      <GoToTop />
+      <main className="position-relative">
+        <Header />
+        <div style={{ height: '100vh' }}>
+          <Outlet />
+        </div>
+        <GoToTop />
+        <Footer />
+      </main>
     </ScrollToTop>
   );
 };

@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Input, Button, Checkbox } from "antd";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Input, Button, Checkbox } from 'antd';
 
 const Login = () => {
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Log values after submission
-    console.log("Username:", username);
-    console.log("Password:", password);
+    console.log('Username:', username);
+    console.log('Password:', password);
     // Reset form fields
-    setUsername("");
-    setPassword("");
+    setUsername('');
+    setPassword('');
   };
 
   return (
-    <div className="row mx-auto font-maven regi-page">
+    <div className="row mx-auto  regi-page">
       <div className="col-md-4 mx-auto my-5">
-        <div className="p-3 w-100 mx-auto border-0 card  shadow-lg text-info-emphasis">
+        <div className="border-0 card mx-auto p-3 py-5 shadow-lg text-info-emphasis w-100">
           <div className="text-center">
             {/* <img
               style={{ height: 80 }}
@@ -38,7 +38,7 @@ const Login = () => {
                 placeholder="Enter Mobile Or Email"
                 style={{ height: 45 }}
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={e => setUsername(e.target.value)}
               />
             </div>
             <div className="form-group mb-2">
@@ -50,7 +50,7 @@ const Login = () => {
                 placeholder="Enter Password"
                 style={{ height: 45 }}
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={e => setPassword(e.target.value)}
               />
             </div>
             <div className="d-flex justify-content-between mb-3">
@@ -58,11 +58,16 @@ const Login = () => {
                 <Checkbox>Remember me</Checkbox>
               </div>
               <div>
-                <Link to={"reset"}> Reset password</Link>
+                <Link to={'reset'}> Reset password</Link>
               </div>
             </div>
             <div className="form-group">
-              <Button type="primary" htmlType="submit" className="w-100">
+              <Button
+                type="primary"
+                size="large"
+                htmlType="submit"
+                className="w-100"
+              >
                 Login
               </Button>
             </div>

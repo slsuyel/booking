@@ -113,66 +113,74 @@ const EclipseSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="ecl">
-      <div className="header_ecl">
-        <div className="spotlight">
-          <div />
-          <div />
-          <div />
+    <div className="bg-black">
+      <section
+        className="ecl"
+        style={{
+          background:
+            'linear-gradient(0deg, rgba(216, 236, 248, 0.06), rgba(152, 192, 239, 0.06))',
+        }}
+      >
+        <div className="header_ecl">
+          <div className="spotlight">
+            <div />
+            <div />
+            <div />
+          </div>
         </div>
-      </div>
-      <canvas ref={canvasRef} id="particleCanvas" />
-      <div className="accent-lines">
-        <div>
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
+        <canvas ref={canvasRef} id="particleCanvas" />
+        <div className="accent-lines">
+          <div>
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+          <div>
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
         </div>
-        <div>
-          <div />
-          <div />
-          <div />
-          <div />
+        <div className="heroSubP">
+          <p>Introducing</p>
         </div>
-      </div>
-      <div className="heroSubP">
-        <p>Introducing</p>
-      </div>
-      <div className="hero">
-        <div className="heroT">
-          <h2>Eclipx</h2>
-          <h2>Eclipx</h2>
+        <div className="hero">
+          <div className="heroT">
+            <h2>Eclipx</h2>
+            <h2>Eclipx</h2>
+          </div>
         </div>
-      </div>
-      <p className="heroP">
-        The world's best platform, <br />
-        powered by EclipxOS + React.
-      </p>
-      <div className="mountains">
-        <div />
-        <div />
-        <div />
-      </div>
-      <div className="hero-spacer" />
-      <div className="content-section">
-        <div className="content-acc">
-          <div />
-          <div />
-        </div>
-        <p className="subt">Revolutionary by design</p>
-        <h3 className="title">
-          Harness. Empower.
-          <br />
-          Unmatched Versatility.
-        </h3>
-        <p className="subp">
-          At the core lies our revolutionary framework, <br />
-          ensuring adaptability across all application architectures.
+        <p className="heroP">
+          The world's best platform, <br />
+          powered by EclipxOS + React.
         </p>
-      </div>
-    </section>
+        <div className="mountains">
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className="hero-spacer" />
+        <div className="content-section">
+          <div className="content-acc">
+            <div />
+            <div />
+          </div>
+          <p className="subt">Revolutionary by design</p>
+          <h3 className="title">
+            Harness. Empower.
+            <br />
+            Unmatched Versatility.
+          </h3>
+          <p className="subp">
+            At the core lies our revolutionary framework, <br />
+            ensuring adaptability across all application architectures.
+          </p>
+        </div>
+      </section>
+    </div>
   );
 };
 

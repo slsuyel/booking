@@ -5,8 +5,6 @@ section .ecl {
   font-family: Untitled Sans, system-ui, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,
     sans-serif;
-  background: #05060f
-    linear-gradient(0deg, rgba(216, 236, 248, 0.06), rgba(152, 192, 239, 0.06));
 
   font-size: max(calc(var(--_size) * 0.03), 10px);
   --_factor: min(600px, 80vh);
@@ -59,7 +57,7 @@ h2 a {
   color: #bad6f7;
   padding: 2em;
   position: absolute;
-  top: 0;
+  top: 52px;
   left: 0;
   right: 0;
   margin: 0 auto;
