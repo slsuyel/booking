@@ -9,7 +9,7 @@ const MainLayout = () => {
     <ScrollToTop>
       <main className="position-relative">
         <Header />
-        <div style={{ height: '100vh' }}>
+        <div style={{ minHeight: '100vh' }}>
           <Outlet />
         </div>
         <GoToTop />

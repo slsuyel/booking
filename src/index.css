@@ -157,6 +157,8 @@ button.item_tab_btn {
   box-shadow: rgba(0, 0, 0, 0.03) 0px -1px 0px 0px,
     rgba(0, 0, 0, 0.16) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 10px 8px -5px,
     rgba(0, 0, 0, 0.16) 0px 12px 32px -2px;
+  min-height: 397px;
+  height: auto;
 }
 
 .layout-container {
