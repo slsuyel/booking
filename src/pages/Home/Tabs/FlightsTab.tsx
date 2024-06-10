@@ -10,10 +10,11 @@ import {
   Checkbox,
 } from 'antd';
 import { UserOutlined, TeamOutlined } from '@ant-design/icons';
-import { Dayjs } from 'dayjs';
+
 import useAirports from '../../../hooks/useAirports';
 import { Spinner } from 'react-bootstrap';
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
+import SButton from '../../../components/reusable/Button';
 
 const { Option } = Select;
 
@@ -64,7 +65,7 @@ const FlightsTab = () => {
     setSearchValue(prevState => ({ ...prevState, children: value }));
   };
 
-  const handleDateChange = (date: Dayjs | null, dateString: string): void => {
+  const handleDateChange = (dateString: string): void => {
     setSearchValue(prevState => ({ ...prevState, date: dateString }));
   };
 
@@ -208,10 +209,7 @@ const FlightsTab = () => {
       </div>
 
       <div className="col-md-6 my-2 btn_find">
-        <button onClick={handleSearch}>
-          <div className="shimmer" />
-          <span className="text-black"> Search Flights</span>
-        </button>
+        <SButton onClick={handleSearch}> Search Flights </SButton>
       </div>
     </div>
   );

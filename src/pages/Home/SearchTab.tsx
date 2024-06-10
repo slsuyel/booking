@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BundleSaveTab from './Tabs/BundleSaveTab';
+// import BundleSaveTab from './Tabs/BundleSaveTab';
 import CarsTab from './Tabs/CarsTab';
 import CruisesTab from './Tabs/CruisesTab';
 import FlightsTab from './Tabs/FlightsTab';
@@ -14,8 +14,8 @@ const SearchTab = () => {
         return <HotelsTab />;
       case 'flights':
         return <FlightsTab />;
-      case 'bundleSave':
-        return <BundleSaveTab />;
+      // case 'bundleSave':
+      //   return <BundleSaveTab />;
       case 'cars':
         return <CarsTab />;
       case 'cruises':
@@ -32,33 +32,26 @@ const SearchTab = () => {
           className={`item_tab_btn ${activeTab === 'hotels' ? 'active' : ''}`}
           onClick={() => setActiveTab('hotels')}
         >
-          <i className="fas fa-hotel"></i> Hotels
+          <i className="pe-2 fas fa-hotel"></i> Hotels
         </button>
         <button
           className={`item_tab_btn ${activeTab === 'flights' ? 'active' : ''}`}
           onClick={() => setActiveTab('flights')}
         >
-          <i className="fas fa-plane"></i> Flights
+          <i className="pe-2 fas fa-plane"></i> Flights
         </button>
-        <button
-          className={`item_tab_btn ${
-            activeTab === 'bundleSave' ? 'active' : ''
-          }`}
-          onClick={() => setActiveTab('bundleSave')}
-        >
-          <i className="fas fa-box"></i> Bundle & Save
-        </button>
+
         <button
           className={`item_tab_btn ${activeTab === 'cars' ? 'active' : ''}`}
           onClick={() => setActiveTab('cars')}
         >
-          <i className="fas fa-car"></i> Cars
+          <i className="pe-2 fas fa-car"></i> Cars
         </button>
         <button
           className={`item_tab_btn ${activeTab === 'cruises' ? 'active' : ''}`}
           onClick={() => setActiveTab('cruises')}
         >
-          <i className="fas fa-ship"></i> Cruises
+          <i className="pe-2 fas fa-ship"></i> Cruises
         </button>
       </div>
       <div>{renderTabContent()}</div>

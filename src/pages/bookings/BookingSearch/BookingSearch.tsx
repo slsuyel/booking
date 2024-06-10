@@ -13,6 +13,7 @@ import { CitySearch } from '../../../types/types';
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { useNavigate } from 'react-router-dom';
 import { Dayjs } from 'dayjs';
+import SButton from '../../../components/reusable/Button';
 
 const { Option } = Select;
 
@@ -210,10 +211,7 @@ const BookingSearch = () => {
         </div>
       </div>
       <div className="col-md-6 my-2 btn_find">
-        <button style={{ width: '100%', height: 50 }} onClick={handleSearch}>
-          <div className="shimmer"></div>
-          <span className="text-black">Find Your Hotel</span>
-        </button>
+        <SButton onClick={handleSearch}>Find Your Hotel</SButton>
       </div>
 
       <div className="mt-4">
