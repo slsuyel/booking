@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import BundleSaveTab from './Tabs/BundleSaveTab';
+import BundleSaveTab from './Tabs/BundleSaveTab';
 import CarsTab from './Tabs/CarsTab';
 import CruisesTab from './Tabs/CruisesTab';
 import FlightsTab from './Tabs/FlightsTab';
@@ -14,8 +14,8 @@ const SearchTab = () => {
         return <HotelsTab />;
       case 'flights':
         return <FlightsTab />;
-      // case 'bundleSave':
-      //   return <BundleSaveTab />;
+      case 'bundle_save':
+        return <BundleSaveTab />;
       case 'cars':
         return <CarsTab />;
       case 'cruises':
@@ -27,31 +27,47 @@ const SearchTab = () => {
 
   return (
     <div className="col-md-7 search_card mx-auto mb-auto py-3">
-      <div className="d-flex flex-wrap gap-2 my-2 justify-content-around">
+      <div className="d-flex gap-1 my-2 justify-content-around">
         <button
-          className={`item_tab_btn ${activeTab === 'hotels' ? 'active' : ''}`}
+          className={`align-items-center d-flex item_tab_btn ${
+            activeTab === 'hotels' ? 'active' : ''
+          }`}
           onClick={() => setActiveTab('hotels')}
         >
-          <i className="pe-2 fas fa-hotel"></i> Hotels
+          <i className="d-none d-sm-block pe-2 fas fa-hotel"></i> Hotels
         </button>
         <button
-          className={`item_tab_btn ${activeTab === 'flights' ? 'active' : ''}`}
+          className={`align-items-center d-flex item_tab_btn ${
+            activeTab === 'flights' ? 'active' : ''
+          }`}
           onClick={() => setActiveTab('flights')}
         >
-          <i className="pe-2 fas fa-plane"></i> Flights
+          <i className="d-none d-sm-block pe-2 fas fa-plane"></i> Flights
+        </button>
+        <button
+          className={`align-items-center d-flex item_tab_btn ${
+            activeTab === 'bundle_save' ? 'active' : ''
+          }`}
+          onClick={() => setActiveTab('bundle_save')}
+        >
+          <i className="d-none d-sm-block pe-2 fas fa-plane"></i> Bundle & Save
         </button>
 
         <button
-          className={`item_tab_btn ${activeTab === 'cars' ? 'active' : ''}`}
+          className={`align-items-center d-flex item_tab_btn ${
+            activeTab === 'cars' ? 'active' : ''
+          }`}
           onClick={() => setActiveTab('cars')}
         >
-          <i className="pe-2 fas fa-car"></i> Cars
+          <i className="d-none d-sm-block pe-2 fas fa-car"></i> Cars
         </button>
         <button
-          className={`item_tab_btn ${activeTab === 'cruises' ? 'active' : ''}`}
+          className={`align-items-center d-flex item_tab_btn ${
+            activeTab === 'cruises' ? 'active' : ''
+          }`}
           onClick={() => setActiveTab('cruises')}
         >
-          <i className="pe-2 fas fa-ship"></i> Cruises
+          <i className="d-none d-sm-block pe-2 fas fa-ship"></i> Cruises
         </button>
       </div>
       <div>{renderTabContent()}</div>

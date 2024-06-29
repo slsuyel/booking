@@ -86,7 +86,7 @@ const Header = () => {
       <Navbar
         expand="lg"
         fixed={isFixed ? 'top' : undefined}
-        className={`border-bottom p-0 py-3 font-maven ${
+        className={`border-bottom p-0 py-2 font-maven ${
           isFixed ? 'header-bg-fix' : ''
         } ${isMobile ? 'd-none' : 'd-block'}`}
       >
@@ -116,7 +116,7 @@ const Header = () => {
 
       {isMobile && (
         <>
-          <div className="align-items-center d-flex justify-content-between p-2 bg-dark">
+          <div className="align-items-center d-flex justify-content-between p-2">
             <Navbar.Brand href="/" className="p-1 ">
               <img src={logo} alt="" width={120} />
             </Navbar.Brand>

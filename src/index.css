@@ -127,6 +127,15 @@ button.item_tab_btn {
   color: white;
 }
 
+@media (max-width: 768px) {
+  button.item_tab_btn {
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 15px;
+    border: 2px solid #007bff;
+  }
+}
+
 .ant-picker-panels {
   display: flex;
   flex-wrap: wrap !important;

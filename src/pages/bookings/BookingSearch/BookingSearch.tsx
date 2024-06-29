@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -14,13 +14,14 @@ import { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { useNavigate } from 'react-router-dom';
 import { Dayjs } from 'dayjs';
 import SButton from '../../../components/reusable/Button';
+import useCities from '../../../hooks/useCities';
 
 const { Option } = Select;
 
 const BookingSearch = () => {
   const navigate = useNavigate();
   const [isSectionOpen, setIsSectionOpen] = useState(false);
-  const [cities, setCities] = useState<CitySearch[]>([]);
+  const { cities, loading } = useCities();
   const [dates, setDates] = useState<[Dayjs | null, Dayjs | null]>([
     null,
     null,
@@ -35,22 +36,6 @@ const BookingSearch = () => {
     checkIn: '',
     checkOut: '',
   });
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          'https://countriesnow.space/api/v0.1/countries/population/cities'
-        );
-        const data = await response.json();
-        setCities(data.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-
-    fetchData();
-  }, []);
 
   const toggleSection = () => {
     setIsSectionOpen(!isSectionOpen);
@@ -123,6 +108,10 @@ const BookingSearch = () => {
 
     navigate(`/hotel-search?${params}`);
   };
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <div className=" mx-auto rounded row w-100  py-3">
