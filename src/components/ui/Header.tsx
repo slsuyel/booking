@@ -3,31 +3,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/images/logo_example.png';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Button, Drawer } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { Drawer } from 'antd';
+import Hamburger from 'hamburger-react';
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false); // Updated state name to camelCase
 
-  const [MobileMenu, setMobileMenu] = useState(false);
-
-  const showDrawer = () => {
-    setMobileMenu(true);
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    setIsFixed(offset > 0);
   };
 
-  const onClose = () => {
-    setMobileMenu(false);
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      setIsFixed(offset > 0);
-    };
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -38,47 +31,15 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    {
-      id: 1,
-      label: 'Login',
-      link: '/login',
-    },
-    {
-      id: 2,
-      label: 'Register',
-      link: '/register',
-    },
-    {
-      id: 3,
-      label: 'Hotels',
-      link: '/hotels',
-    },
-    {
-      id: 4,
-      label: 'Cars',
-      link: '/cars',
-    },
-    // {
-    //   id: 5,
-    //   label: 'Flights',
-    //   link: '/flights',
-    // },
-    // {
-    //   id: 6,
-    //   label: 'Bundle + Save',
-    //   link: '/bundle-save',
-    // },
-    // {
-    //   id: 7,
-    //   label: 'Cruises',
-    //   link: '/cruises',
-    // },
-    // {
-    //   id: 8,
-    //   label: 'Experiences',
-    //   link: '/experiences',
-    // },
+    { id: 1, label: 'Login', link: '/login' },
+    { id: 2, label: 'Register', link: '/register' },
+    { id: 3, label: 'Hotels', link: '/hotels' },
+    { id: 4, label: 'Cars', link: '/cars' },
   ];
+
+  const onClose = () => {
+    setMobileMenu(false);
+  };
 
   return (
     <>
@@ -90,12 +51,12 @@ const Header = () => {
         } ${isMobile ? 'd-none' : 'd-block'}`}
       >
         <Container>
-          <Navbar.Brand href="/" className="p-0 ">
+          <Navbar.Brand href="/" className="p-0">
             <img src={logo} alt="" width={200} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
-            id="basic-navbar-nav "
+            id="basic-navbar-nav"
             className="justify-content-end fs-5 fw-semibold gap-3"
           >
             {menuItems.map(item => (
@@ -114,22 +75,15 @@ const Header = () => {
       {isMobile && (
         <>
           <div className="align-items-center d-flex justify-content-between p-2">
-            <Navbar.Brand href="/" className="p-1 ">
+            <Navbar.Brand href="/" className="p-1">
               <img src={logo} alt="" width={120} />
             </Navbar.Brand>
-            <Button type="primary" className="rounded-0 " onClick={showDrawer}>
-              <MenuOutlined />
-            </Button>
+            <Hamburger toggled={mobileMenu} toggle={setMobileMenu} />
           </div>
 
-          <Drawer
-            style={{ backgroundColor: '#be93b6', width: '60%' }}
-            placement="left"
-            onClose={onClose}
-            open={MobileMenu}
-          >
+          <Drawer placement="left" onClose={onClose} open={mobileMenu}>
             {menuItems.map(item => (
-              <NavLink key={item.id} to={item.link} className="nav-link ">
+              <NavLink key={item.id} to={item.link} className="nav-link fs-4">
                 {item.label}
               </NavLink>
             ))}
