@@ -96,12 +96,11 @@ const Header = () => {
               </NavLink>
             ))}
             <>
-              <button className="bg-transparent d-block fw-bold item_tab_btn mb-1 ms-0 mx-1 text-dark text-uppercase">
-                Help
+              <button className="fw-bold item_tab_btn mx-1 text-uppercase">
+                <i className="fa-solid fa-circle-info"></i> Help
               </button>
-
-              <button className="bg-transparent d-block fw-bold item_tab_btn mb-1 ms-0 mx-1 text-dark text-uppercase">
-                Find My Trip
+              <button className="fw-bold item_tab_btn mx-1 text-uppercase">
+                <i className="fa-solid fa-magnifying-glass"></i> Find My Trip
               </button>
             </>
           </Drawer>

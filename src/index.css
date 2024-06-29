@@ -177,6 +177,12 @@ a,
     color: #f2eaea;
   }
 }
+
+.promo-message {
+  height: 42px;
+  padding: 4px 4px;
+  background: #0d6efd;
+}
 /* -------------------------------------------------- */
 /* @media (max-width: 768px) { */
 
