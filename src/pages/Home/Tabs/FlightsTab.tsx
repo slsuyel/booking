@@ -21,6 +21,7 @@ const { Option } = Select;
 interface Airport {
   name: string;
   country: string;
+  iata: string;
 }
 
 interface SearchValue {
@@ -129,7 +130,8 @@ const FlightsTab = () => {
         >
           {data.map((d: Airport) => (
             <Option key={d.name} value={d.name}>
-              {d.name}, {d.country}
+              <i className=" pe-2 fas fa-plane"></i> {d.iata} - {d.name},{' '}
+              {d.country}
             </Option>
           ))}
         </Select>
@@ -146,7 +148,8 @@ const FlightsTab = () => {
         >
           {data.map((d: Airport) => (
             <Option key={d.name} value={d.name}>
-              {d.name}, {d.country}
+              <i className=" pe-2 fas fa-plane"></i> {d.iata} - {d.name},{' '}
+              {d.country}
             </Option>
           ))}
         </Select>
@@ -154,6 +157,7 @@ const FlightsTab = () => {
 
       <div className="col-md-6 my-2">
         <DatePicker
+          required
           style={{ width: '100%', height: 50, marginBottom: 16 }}
           onChange={handleDateChange as any}
           placeholder="Journey Date"

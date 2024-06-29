@@ -3,9 +3,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/images/logo_example.png';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Button, Drawer, Switch } from 'antd';
+import { Button, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import { SoundOutlined } from '@ant-design/icons';
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -49,16 +48,16 @@ const Header = () => {
       label: 'Register',
       link: '/register',
     },
-    // {
-    //   id: 3,
-    //   label: 'Hotels',
-    //   link: '/hotels',
-    // },
-    // {
-    //   id: 4,
-    //   label: 'Cars',
-    //   link: '/cars',
-    // },
+    {
+      id: 3,
+      label: 'Hotels',
+      link: '/hotels',
+    },
+    {
+      id: 4,
+      label: 'Cars',
+      link: '/cars',
+    },
     // {
     //   id: 5,
     //   label: 'Flights',
@@ -85,9 +84,9 @@ const Header = () => {
     <>
       <Navbar
         expand="lg"
-        fixed={isFixed ? 'top' : undefined}
-        className={`border-bottom p-0 py-2 font-maven ${
-          isFixed ? 'header-bg-fix' : ''
+        fixed={isFixed ? undefined : undefined}
+        className={` p-0 py-2 font-maven animated-gradient-background ${
+          isFixed ? '' : ''
         } ${isMobile ? 'd-none' : 'd-block'}`}
       >
         <Container>
@@ -100,16 +99,14 @@ const Header = () => {
             className="justify-content-end fs-5 fw-semibold gap-3"
           >
             {menuItems.map(item => (
-              <NavLink key={item.id} to={item.link} className="nav-link ">
+              <NavLink
+                key={item.id}
+                to={item.link}
+                className="nav-link text-white pe-2"
+              >
                 {item.label}
               </NavLink>
             ))}
-            <SoundOutlined />
-            <Switch
-              checkedChildren={<i className="fas fa-sun"></i>}
-              unCheckedChildren={<i className="fas fa-moon"></i>}
-              defaultChecked
-            />
           </Navbar.Collapse>
         </Container>
       </Navbar>

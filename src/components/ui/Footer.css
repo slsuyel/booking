@@ -719,3 +719,9 @@ ul.no-bullet {
     left: -80px;
   }
 }
+
+@media (max-width: 768px) {
+  .r-mountain {
+    right: -7px;
+  }
+}

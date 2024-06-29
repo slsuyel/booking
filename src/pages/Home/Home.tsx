@@ -1,11 +1,12 @@
 import SearchTab from './SearchTab';
 import RecentSearch from './../bookings/RecentSearch/RecentSearch';
-// import Offers from '../bookings/Offers/Offers';
+
+import Offers from '../bookings/Offers/Offers';
 
 const Home = () => {
   return (
     <>
-      <div className=" row mx-auto my-5 position-relative">
+      <div className=" row mx-auto position-relative py-5">
         <SearchTab />
         <div className="col-md-5 p-0">
           <img
@@ -16,10 +17,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="">
-        <RecentSearch />
-      </div>
-      {/* <Offers /> */}
+      <RecentSearch />
+      <br />
+      <br />
+
+      <Offers />
+      <br />
+      <br />
     </>
   );
 };

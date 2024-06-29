@@ -9,12 +9,17 @@ const RecentSearch = () => {
       people: 2,
     },
     {
-      location: 'Dhaka',
+      location: 'Miami,',
       dates: ['May 4', 'May 5'],
       people: 2,
     },
     {
-      location: "Cox's Bazar",
+      location: 'Dubai,',
+      dates: ['May 4', 'May 5'],
+      people: 2,
+    },
+    {
+      location: 'Los Angeles,',
       dates: ['May 4', 'May 5'],
       people: 2,
     },
@@ -55,9 +60,11 @@ const RecentSearch = () => {
                 to={`/hotel-search?${params}`}
               >
                 <img
-                  src={`https://cf.bstatic.com/xdata/images/city/64x64/977437.jpg?k=0e8e510a113c319717b54edcbd3df2b5e2cf190e403973548745a10a2c19e660&o=`}
+                  width={60}
+                  height={60}
+                  src={`https://blog.thomascook.in/wp-content/uploads/2017/11/Untitled-designfs-1.png`}
                   alt={search.location}
-                  className="img-fluid rounded-circle"
+                  className=" rounded-circle"
                 />
                 <div className="text-secondary">
                   <p className="mb-0 fs-6">

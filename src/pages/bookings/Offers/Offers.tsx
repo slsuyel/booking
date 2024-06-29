@@ -1,125 +1,61 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
-
+import './Offer.css';
 const Offers = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 1000,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const data = [
-    {
-      title: 'New offer 1',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 1',
-    },
-    {
-      title: 'New offer 2',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 2',
-    },
-    {
-      title: 'New offer 1',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 1',
-    },
-    {
-      title: 'New offer 2',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 2',
-    },
-    {
-      title: 'New offer 1',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 1',
-    },
-    {
-      title: 'New offer 1',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 1',
-    },
-    {
-      title: 'New offer 1',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 1',
-    },
-    {
-      title: 'New offer 1',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 1',
-    },
-    {
-      title: 'New offer 2',
-      img: 'https://t3.ftcdn.net/jpg/05/07/79/68/360_F_507796863_XOctjfN6VIiHa79bFj7GCg92P9TpELIe.jpg',
-      des: 'Description 2',
-    },
-  ];
-
   return (
-    <div className="offers-container mx-auto">
-      <h6 className="offers-heading">Exclusive Offers</h6>
-      <div className="slider-container">
-        <Slider {...settings}>
-          {data.map((item, index) => (
-            <div key={index}>
-              <div
-                className="card-slider"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="card-slider-image rounded border-0 "
-                />
-                <div
-                  className={`card-body-slider ${
-                    hoveredIndex === index ? 'open' : ''
-                  }`}
-                >
-                  <h5 className="card-slider-title">{item.title}</h5>
-                  <p className="card-slider-text">{item.des}</p>
-                  <Link to={''} className="card-slider-link">
-                    View Details
-                  </Link>
-                </div>
-              </div>
+    <div className="row mx-auto " style={{ background: '#E7F1FE' }}>
+      <div className="col-md-6 px-4 _offer_contents">
+        <div className="bg-white rounded-3">
+          <div className="_offer_contents">
+            <div>
+              <img
+                className="img-fluid rounded-3 rounded-bottom-0 rounded-top"
+                src="https://www.princess.com/content/dam/princess-headless/shorex/ports/new-york-city-new-york.jpg"
+                alt=""
+              />
             </div>
-          ))}
-        </Slider>
+
+            <div className="ps-3">
+              <h6 className=" my-2 text-secondary" style={{ fontSize: 14 }}>
+                AMERICA'S CRUISE SALE
+              </h6>
+              <h5 className="fs-5 fw-bold my-2">Set sail from $43/night</h5>
+              <p style={{ fontSize: 17 }}>
+                Make your next vacation a cruise! Book now to get up to $2,000
+                to spend at sea plus the absolute lowest prices, guaranteed.
+              </p>
+              <Link className="text-decoration-none" to={''}>
+                Search Cruises{' '}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-6 px-4 _offer_contents">
+        <div className="bg-white rounded-3">
+          <div className="_offer_contents">
+            <div>
+              <img
+                className="img-fluid rounded-3 rounded-bottom-0 rounded-top"
+                src="https://www.princess.com/content/dam/princess-headless/shorex/ports/new-york-city-new-york.jpg"
+                alt=""
+              />
+            </div>
+
+            <div className="ps-3">
+              <h6 className=" my-2 text-secondary" style={{ fontSize: 14 }}>
+                AMERICA'S CRUISE SALE
+              </h6>
+              <h5 className="fs-5 fw-bold my-2">Set sail from $43/night</h5>
+              <p style={{ fontSize: 17 }}>
+                Make your next vacation a cruise! Book now to get up to $2,000
+                to spend at sea plus the absolute lowest prices, guaranteed.
+              </p>
+              <Link className="text-decoration-none" to={''}>
+                Search Cruises{' '}
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

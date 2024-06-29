@@ -205,7 +205,7 @@ const BookingSearch = () => {
 
       <div className="mt-4">
         <hr />
-        <h6 className="text-center mb-0">
+        <h6 className="text-center mb-0 text-white">
           Book all of your hotels at once and save up to $625
         </h6>
       </div>
