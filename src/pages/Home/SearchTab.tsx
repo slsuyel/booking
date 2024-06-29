@@ -50,7 +50,8 @@ const SearchTab = () => {
           }`}
           onClick={() => setActiveTab('bundle_save')}
         >
-          <i className="d-none d-sm-block pe-2 fas fa-plane"></i> Bundle & Save
+          <i className="d-none d-sm-block pe-2 fa-solid fa-suitcase-rolling"></i>{' '}
+          Bundle & Save
         </button>
 
         <button

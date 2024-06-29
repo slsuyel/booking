@@ -127,15 +127,6 @@ button.item_tab_btn {
   color: white;
 }
 
-@media (max-width: 768px) {
-  button.item_tab_btn {
-    border-radius: 20px;
-    padding: 4px 12px;
-    font-size: 15px;
-    border: 2px solid #007bff;
-  }
-}
-
 .ant-picker-panels {
   display: flex;
   flex-wrap: wrap !important;
@@ -179,4 +170,18 @@ button.item_tab_btn {
 .content {
   flex: 1;
   padding: 20px; /* Add some padding for spacing */
+}
+/* -------------------------------------------------- */
+/* @media (max-width: 768px) { */
+
+@media (max-width: 768px) {
+  .banner_img_p {
+    display: none;
+  }
+  button.item_tab_btn {
+    border-radius: 17px;
+    padding: 8px 11px;
+    font-size: 13px;
+    border: 2px solid #007bff;
+  }
 }

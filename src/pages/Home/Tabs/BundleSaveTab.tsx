@@ -1,7 +1,7 @@
 const BundleSaveTab = () => {
   return (
-    <div>
-      <h1>This is BundleSaveTab page</h1>
+    <div className="d-flex align-items-center justify-content-center mt-5">
+      <h5 className="mt-5">Coming Soon</h5>
     </div>
   );
 };
