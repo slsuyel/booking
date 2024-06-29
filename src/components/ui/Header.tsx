@@ -57,18 +57,26 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
-            className="justify-content-end fs-5 fw-semibold gap-3"
+            className=" fs-5 fw-semibold gap-3"
           >
             {menuItems.map(item => (
               <NavLink
                 key={item.id}
                 to={item.link}
-                className="nav-link text-white pe-2"
+                className="nav-link text-white px-2 fw-medium "
               >
                 {item.label}
               </NavLink>
             ))}
           </Navbar.Collapse>
+          <>
+            <button className="fw-bold item_tab_btn mx-1 text-uppercase">
+              <i className="fa-solid fa-circle-info"></i> Help
+            </button>
+            <button className="fw-bold item_tab_btn mx-1 text-uppercase">
+              <i className="fa-solid fa-magnifying-glass"></i> Find My Trip
+            </button>
+          </>
         </Container>
       </Navbar>
 
@@ -87,6 +95,15 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
+            <>
+              <button className="bg-transparent d-block fw-bold item_tab_btn mb-1 ms-0 mx-1 text-dark text-uppercase">
+                Help
+              </button>
+
+              <button className="bg-transparent d-block fw-bold item_tab_btn mb-1 ms-0 mx-1 text-dark text-uppercase">
+                Find My Trip
+              </button>
+            </>
           </Drawer>
         </>
       )}

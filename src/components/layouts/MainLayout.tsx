@@ -10,7 +10,7 @@ const MainLayout = () => {
       <main className=" container">
         <Header />
 
-        <div style={{ minHeight: '100vh' }}>
+        <div style={{ minHeight: '70vh' }}>
           <Outlet />
         </div>
         <GoToTop />

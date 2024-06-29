@@ -103,7 +103,7 @@ a,
   margin-bottom: 10px;
 }
 
-button.item_tab_btn {
+.item_tab_btn {
   border-radius: 20px;
   padding: 6px 12px;
   font-size: 18px;
@@ -164,6 +164,19 @@ button.item_tab_btn {
   flex: 1;
   padding: 20px; /* Add some padding for spacing */
 }
+
+.footer_all_service {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.footer_all_service {
+  a:hover {
+    color: #f2eaea;
+  }
+}
 /* -------------------------------------------------- */
 /* @media (max-width: 768px) { */
 
@@ -171,7 +184,7 @@ button.item_tab_btn {
   .banner_img_p {
     display: none;
   }
-  button.item_tab_btn {
+  .item_tab_btn {
     border-radius: 17px;
     padding: 8px 11px;
     font-size: 13px;

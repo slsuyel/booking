@@ -1,39 +1,100 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 const Footer = () => {
   return (
     <>
       <div className="animated-gradient-background p-3 py-5 text-light">
-        <div className="row">
-          <div className="col-md-3">
+        <div className="row footer_all_service">
+          <div className="col-md-3 ">
             <h5>Our Customers</h5>
             <ul className="list-unstyled ps-4">
-              <li>Travel Agents and Experts</li>
-              <li>Employee & Member Benefits</li>
-              <li>Travel Influencers</li>
-              <li>Travelers</li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-users me-2"></i>
+                  Travel Agents and Experts
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-users-cog me-2"></i>
+                  Employee & Member Benefits
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-user-friends me-2"></i>
+                  Travel Influencers
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-user me-2"></i>
+                  Travelers
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-md-3">
             <h5>Why Mondee</h5>
             <ul className="list-unstyled ps-4">
-              <li>Meet Abhi</li>
-              <li>Marketplace</li>
-              <li>Travel Tech & Innovation</li>
-              <li>About</li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-user-check me-2"></i>
+                  Meet Abhi
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-store-alt me-2"></i>
+                  Marketplace
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-laptop-code me-2"></i>
+                  Travel Tech & Innovation
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-info-circle me-2"></i>
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-md-3">
             <h5>Leadership Team</h5>
             <ul className="list-unstyled ps-4">
-              <li>Press Releases</li>
-              <li>Partners</li>
-              <li>In the News</li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-newspaper me-2"></i>
+                  Press Releases
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-handshake me-2"></i>
+                  Partners
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-newspaper me-2"></i>
+                  In the News
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-md-3">
             <h5>Contact</h5>
             <ul className="list-unstyled ps-4">
-              <li>Careers</li>
+              <li>
+                <Link to="/">
+                  <i className="fas fa-briefcase me-2"></i>
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
