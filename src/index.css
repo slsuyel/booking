@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@100..900&display=swap');
+/* src/index.scss or src/App.scss */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
   background-color: #c3f1fe38;
@@ -6,6 +7,7 @@ body {
 
 .header-bg-fix {
   background-color: #f5f5ea;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* .animated-gradient-background {
@@ -71,7 +73,7 @@ input,
 textarea,
 a,
 .ant-btn {
-  font-family: 'Murecho', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 :where(.css-dev-only-do-not-override-kghr11).ant-picker .ant-picker-suffix {

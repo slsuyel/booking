@@ -8,7 +8,9 @@ const useAirports = () => {
     setLoading(true);
     const fetchData = async () => {
       try {
-        const response = await fetch('./airports.json');
+        const response = await fetch(
+          'https://raw.githubusercontent.com/slsuyel/booking/main/public/airports.json'
+        );
         const result = await response.json();
         setData(result);
         setLoading(false);
