@@ -38,7 +38,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-md-3">
-            <h5>Why Mondee</h5>
+            <h5>Why Us?</h5>
             <ul className="list-unstyled ps-4">
               <li>
                 <Link to="/">
