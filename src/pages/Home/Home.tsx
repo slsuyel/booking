@@ -2,6 +2,7 @@ import SearchTab from './SearchTab';
 import RecentSearch from './../bookings/RecentSearch/RecentSearch';
 
 import Offers from '../bookings/Offers/Offers';
+import HorizontalScroll from '../../components/ui/HorizontalScroll/HorizontalScroll';
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
       <RecentSearch />
       <br />
       <br />
-
+      <HorizontalScroll />
       <Offers />
       <br />
       <br />

@@ -6,6 +6,7 @@ import Register from '../pages/auth/Register';
 import Home from '../pages/Home/Home';
 import SearchResult from '../pages/bookings/SearchResult/SearchResult';
 import EclipseSection from '../pages/Home/EclipseSection/EclipseSection';
+import Scroll from '../components/ui/Scroll/Scroll';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/else',
         element: <EclipseSection />,
+      },
+      {
+        path: '/scroll',
+        element: <Scroll />,
       },
     ],
   },
