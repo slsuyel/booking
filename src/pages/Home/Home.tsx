@@ -7,9 +7,9 @@ import HorizontalScroll from '../../components/ui/HorizontalScroll/HorizontalScr
 const Home = () => {
   return (
     <>
-      <div className=" row mx-auto position-relative py-5">
+      <div className=" row mx-auto position-relative py-5 ">
         <SearchTab />
-        <div className="col-md-5 p-0">
+        <div className="col-md-5 p-0 ">
           <img
             className="banner_img_p"
             src="https://us.canvasartrocks.com/cdn/shop/products/Travel_the_world_monument_Wall_Mural_Wallpaper_a_1400x.jpg?v\u003d1571715164"
@@ -22,6 +22,9 @@ const Home = () => {
       <br />
       <br />
       <HorizontalScroll />
+      <br />
+      <br />
+      <br />
       <Offers />
       <br />
       <br />

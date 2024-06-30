@@ -46,9 +46,9 @@ const Header = () => {
       <Navbar
         expand="lg"
         fixed={isFixed ? undefined : undefined}
-        className={` p-0 py-2 font-maven animated-gradient-background ${
-          isFixed ? '' : ''
-        } ${isMobile ? 'd-none' : 'd-block'}`}
+        className={` p-0 py-2 pcln-global-header  ${isFixed ? '' : ''} ${
+          isMobile ? 'd-none' : 'd-block'
+        }`}
       >
         <Container>
           <Navbar.Brand href="/" className="p-0">
@@ -63,7 +63,7 @@ const Header = () => {
               <NavLink
                 key={item.id}
                 to={item.link}
-                className="nav-link text-white px-2 fw-medium "
+                className="nav-link  px-2 fw-medium "
               >
                 {item.label}
               </NavLink>

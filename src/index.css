@@ -43,6 +43,11 @@ body {
   }
 }
 
+.pcln-global-header {
+  background: #fefefe;
+  box-shadow: 0px 1px 0px 0px rgba(89, 106, 125, 0.5);
+}
+
 .bed-icon {
   position: absolute;
   z-index: 2;

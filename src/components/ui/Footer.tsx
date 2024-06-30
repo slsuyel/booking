@@ -3,7 +3,10 @@ import './Footer.css';
 const Footer = () => {
   return (
     <>
-      <div className="animated-gradient-background p-3 py-5 text-light">
+      <div
+        className="p-3 pt-4 text-light rounded-top"
+        style={{ background: '#0c3545' }}
+      >
         <div className="row footer_all_service">
           <div className="col-md-3 ">
             <h5>Our Customers</h5>

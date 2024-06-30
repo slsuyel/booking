@@ -51,8 +51,8 @@ const HorizontalScroll = () => {
   const settings = {
     dots: true,
     fade: true,
-    infinite: false,
-    speed: 500,
+    infinite: true,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -86,7 +86,7 @@ const HorizontalScroll = () => {
 
   return (
     <div className="container overflow-hidden">
-      <Slider {...settings}>
+      <Slider autoplay {...settings}>
         {data.map((item, index) => (
           <section key={index} className="hr_content_slick">
             <div className=" row mx-auto text-black">
