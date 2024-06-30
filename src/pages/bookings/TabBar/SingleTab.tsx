@@ -25,7 +25,11 @@ const SingleTab = () => {
 
   return (
     <>
-      <div className="hr_content_slick ">
+      <div
+        className="hr_content_slick "
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <div className="col-md-10 mx-auto text-dark">
           <h2 className="ms-5 my-3">{headingMessage}</h2>
           {tabContent}

@@ -7,7 +7,11 @@ import HorizontalScroll from '../../components/ui/HorizontalScroll/HorizontalScr
 const Home = () => {
   return (
     <>
-      <div className=" row mx-auto position-relative py-5 ">
+      <div
+        className=" row mx-auto position-relative py-5 "
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <SearchTab />
         <div className="col-md-5 p-0 ">
           <img

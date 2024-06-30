@@ -36,6 +36,8 @@ const RecentSearch = () => {
 
   return (
     <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
       className="container mx-auto my-3 pb-5 px-2 py-3 rounded-5 row w-100"
       style={{ background: '#e8f2ff' }}
     >

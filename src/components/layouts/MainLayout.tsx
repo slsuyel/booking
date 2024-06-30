@@ -4,8 +4,13 @@ import Header from './../ui/Header';
 import Footer from './../ui/Footer';
 import { GoToTop } from 'go-to-top-react';
 import PromoMessage from '../ui/PromoMessage';
-
+import { useEffect } from 'react';
+import AOS from 'aos';
 const MainLayout = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <ScrollToTop>
       <PromoMessage />

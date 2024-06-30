@@ -3,7 +3,12 @@ import './Offer.css';
 
 const Offers = () => {
   return (
-    <div className="row mx-auto " style={{ background: '#E7F1FE' }}>
+    <div
+      className="row mx-auto "
+      style={{ background: '#E7F1FE' }}
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div className="col-md-6 px-4 _offer_contents">
         <div className="bg-white rounded-3">
           <div className="_offer_contents">
