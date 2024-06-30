@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="row footer_all_service">
           <div className="col-md-3 ">
             <h5>Our Customers</h5>
-            <ul className="list-unstyled ps-4">
+            <ul className="list-unstyled ">
               <li>
                 <Link to="/">
                   <i className="fas fa-users me-2"></i>
@@ -38,14 +38,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-md-3">
-            <h5>Why Us?</h5>
-            <ul className="list-unstyled ps-4">
-              <li>
-                <Link to="/">
-                  <i className="fas fa-user-check me-2"></i>
-                  Meet Abhi
-                </Link>
-              </li>
+            <h5>Why Booktickets24.com</h5>
+            <ul className="list-unstyled ">
               <li>
                 <Link to="/">
                   <i className="fas fa-store-alt me-2"></i>
@@ -68,7 +62,7 @@ const Footer = () => {
           </div>
           <div className="col-md-3">
             <h5>Leadership Team</h5>
-            <ul className="list-unstyled ps-4">
+            <ul className="list-unstyled ">
               <li>
                 <Link to="/">
                   <i className="fas fa-newspaper me-2"></i>
@@ -91,7 +85,7 @@ const Footer = () => {
           </div>
           <div className="col-md-3">
             <h5>Contact</h5>
-            <ul className="list-unstyled ps-4">
+            <ul className="list-unstyled ">
               <li>
                 <Link to="/">
                   <i className="fas fa-briefcase me-2"></i>

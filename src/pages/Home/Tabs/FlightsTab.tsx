@@ -10,7 +10,6 @@ import {
   Checkbox,
 } from 'antd';
 import { UserOutlined, TeamOutlined } from '@ant-design/icons';
-
 import useAirports from '../../../hooks/useAirports';
 import { Spinner } from 'react-bootstrap';
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
@@ -32,6 +31,7 @@ interface SearchValue {
   addCar: boolean;
   departure: string | null;
   destination: string | null;
+  flight_class: string | null;
 }
 
 const FlightsTab = () => {
@@ -46,6 +46,7 @@ const FlightsTab = () => {
     addCar: false,
     departure: null,
     destination: null,
+    flight_class: null,
   });
 
   const toggleSection = (): void => {
@@ -58,6 +59,7 @@ const FlightsTab = () => {
       adults: value >= 1 ? value : 1,
     }));
   };
+
   const handleAddCar = (e: CheckboxChangeEvent) => {
     setSearchValue({ ...searchValue, addCar: e.target.checked });
   };
@@ -83,9 +85,13 @@ const FlightsTab = () => {
     setSearchValue(prevState => ({ ...prevState, destination: value }));
   };
 
+  const handleFlightClassChange = (value: string): void => {
+    setSearchValue(prevState => ({ ...prevState, flight_class: value }));
+  };
+
   const handleSearch = () => {
-    const { departure, destination, date, adults } = searchValue;
-    if (!departure || !destination || !date || !adults) {
+    const { departure, destination, date, adults, flight_class } = searchValue;
+    if (!departure || !destination || !date || !adults || !flight_class) {
       message.error('Please select all fields.');
       return;
     }
@@ -96,6 +102,7 @@ const FlightsTab = () => {
     }
 
     console.log(searchValue);
+    // Perform your search logic here
   };
 
   if (loading) {
@@ -104,24 +111,39 @@ const FlightsTab = () => {
 
   return (
     <div className="row mx-auto">
-      <div className="px-2">
-        <Radio.Group
-          defaultValue={1}
-          style={{ marginBottom: 16 }}
-          onChange={handleRadioChange as any}
-        >
-          <Radio value={1}>One-way</Radio>
-          <Radio value={2}>Round-trip</Radio>
-          <Radio disabled value={3}>
-            Multi-city
-          </Radio>
-        </Radio.Group>
+      <div className="d-flex gap-1 mt-2">
+        <div className="">
+          <Radio.Group
+            defaultValue={1}
+            style={{ marginBottom: 16 }}
+            onChange={handleRadioChange as any}
+          >
+            <Radio value={1}>One-way</Radio>
+            <Radio value={2}>Round-trip</Radio>
+            <Radio disabled value={3}>
+              Multi-city
+            </Radio>
+          </Radio.Group>
+        </div>
+        <div>
+          <Select
+            showSearch
+            placeholder="Select Class"
+            onChange={handleFlightClassChange}
+            value={searchValue.flight_class}
+          >
+            <Option value="first">First Class</Option>
+            <Option value="business">Business Class</Option>
+            <Option value="premium-economy">Premium Economy</Option>
+            <Option value="economy">Economy Class</Option>
+          </Select>
+        </div>
       </div>
 
       <div className="col-md-6">
         <Select
           showSearch
-          className="p3selc"
+          // className="p3selc"
           placeholder="Departure From"
           optionFilterProp="children"
           style={{ width: '100%', height: 50, marginBottom: 16 }}
@@ -139,7 +161,7 @@ const FlightsTab = () => {
       <div className="col-md-6">
         <Select
           showSearch
-          className="p3selc"
+          // className="p3selc"
           placeholder="Going to"
           optionFilterProp="children"
           style={{ width: '100%', height: 50, marginBottom: 16 }}

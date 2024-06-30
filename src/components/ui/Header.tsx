@@ -33,8 +33,9 @@ const Header = () => {
   const menuItems = [
     { id: 1, label: 'Login', link: '/login' },
     { id: 2, label: 'Register', link: '/register' },
-    { id: 3, label: 'Hotels', link: '/hotels' },
-    { id: 4, label: 'Cars', link: '/cars' },
+    { id: 3, label: 'Hotels', link: '/b/hotels' },
+    { id: 5, label: 'Flight', link: '/b/flights' },
+    { id: 4, label: 'Cars', link: '/b/cars' },
   ];
 
   const onClose = () => {
@@ -70,10 +71,10 @@ const Header = () => {
             ))}
           </Navbar.Collapse>
           <>
-            <button className="fw-bold item_tab_btn mx-1 text-uppercase">
+            <button className="fw-medium item_tab_btn mx-1 text-uppercase">
               <i className="fa-solid fa-circle-info"></i> Help
             </button>
-            <button className="fw-bold item_tab_btn mx-1 text-uppercase">
+            <button className="fw-medium item_tab_btn mx-1 text-uppercase">
               <i className="fa-solid fa-magnifying-glass"></i> Find My Trip
             </button>
           </>

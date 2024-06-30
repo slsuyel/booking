@@ -173,13 +173,13 @@ a,
 .footer_all_service {
   a {
     text-decoration: none;
-    color: white;
+    color: #fcfcfce8;
   }
 }
 
 .footer_all_service {
   a:hover {
-    color: #f2eaea;
+    color: #cec4c4e8;
   }
 }
 
@@ -260,6 +260,16 @@ ul.slick-dots li {
 
 .slick-dots li button:before {
   font-size: 16px;
+}
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.offers-wrapper {
+  position: relative; /* Ensure Offers and particles are positioned correctly */
 }
 
 /* -------------------------------------------------- */

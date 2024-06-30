@@ -7,6 +7,9 @@ import Home from '../pages/Home/Home';
 import SearchResult from '../pages/bookings/SearchResult/SearchResult';
 import EclipseSection from '../pages/Home/EclipseSection/EclipseSection';
 import Scroll from '../components/ui/Scroll/Scroll';
+import Particle from '../components/ui/Particle/Particle';
+
+import SingleTab from '../pages/bookings/TabBar/SingleTab';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: '/particle',
+        element: <Particle />,
+      },
+      {
         path: '/register',
         element: <Register />,
       },
@@ -38,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/scroll',
         element: <Scroll />,
+      },
+      {
+        path: '/b/:service',
+        element: <SingleTab />,
       },
     ],
   },

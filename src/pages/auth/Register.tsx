@@ -1,108 +1,86 @@
-import { useState } from 'react';
-import { Form, Input, Button } from 'antd';
-import logo from '../../assets/icons/googlelogin.svg';
-
-interface FormValues {
-  email: string;
-  password: string;
-  retypePassword: string;
-}
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Input, Button, Checkbox } from 'antd';
 
 const Register = () => {
-  const [form] = Form.useForm();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [retypePassword, setRetypePassword] = useState('');
+  const [fullName, setFullName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
-  const onFinish = (values: FormValues) => {
-    console.log('Received values:', values);
-  };
-
-  // Function to handle Google login
-  const handleGoogleLogin = () => {
-    // Implement Google OAuth logic here
-    console.log('Login with Google clicked');
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Log values after submission
+    console.log('Full Name:', fullName);
+    console.log('Email:', email);
+    console.log('Password:', password);
+    // Reset form fields
+    setFullName('');
+    setEmail('');
+    setPassword('');
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6 card shadow-lg">
-          <Form form={form} onFinish={onFinish} layout="vertical">
-            <h3 className="control-label text-center text-info-emphasis my-3">
-              Sign in or create an account
-            </h3>
-
-            <Form.Item
-              label="Email"
-              name="email"
-              rules={[
-                { required: true, message: 'Please input your email!' },
-                {
-                  type: 'email',
-                  message: 'Please enter a valid email address!',
-                },
-              ]}
-            >
+    <div className="row mx-auto regi-page">
+      <div className="col-md-4 mx-auto my-5">
+        <div className="border-0 card mx-auto p-3 py-5 shadow-lg text-info-emphasis w-100">
+          <div className="text-center">
+            <h3 className="control-label mt-3">Sign Up for an Account</h3>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group mb-2">
+              <label className="my-1" htmlFor="registerFullName">
+                Full Name
+              </label>
               <Input
+                id="registerFullName"
+                placeholder="Enter Full Name"
+                style={{ height: 45 }}
+                value={fullName}
+                onChange={e => setFullName(e.target.value)}
+              />
+            </div>
+            <div className="form-group mb-2">
+              <label className="my-1" htmlFor="registerEmail">
+                Email
+              </label>
+              <Input
+                id="registerEmail"
+                placeholder="Enter Email"
+                style={{ height: 45 }}
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="Enter your email"
               />
-            </Form.Item>
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[
-                { required: true, message: 'Please input your password!' },
-              ]}
-            >
+            </div>
+            <div className="form-group mb-2">
+              <label className="my-1" htmlFor="registerPassword">
+                Password
+              </label>
               <Input.Password
+                id="registerPassword"
+                placeholder="Enter Password"
+                style={{ height: 45 }}
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                placeholder="Enter your password"
               />
-            </Form.Item>
-            <Form.Item
-              label="Retype Password"
-              name="retypePassword"
-              dependencies={['password']}
-              rules={[
-                { required: true, message: 'Please retype your password!' },
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value || getFieldValue('password') === value) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject(
-                      new Error('The two passwords do not match!')
-                    );
-                  },
-                }),
-              ]}
-            >
-              <Input.Password
-                value={retypePassword}
-                onChange={e => setRetypePassword(e.target.value)}
-                placeholder="Retype your password"
-              />
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" size="large" htmlType="submit">
+            </div>
+            <div className="form-group mb-3">
+              <Checkbox>I agree to the terms and conditions</Checkbox>
+            </div>
+            <div className="form-group">
+              <Button
+                type="primary"
+                size="large"
+                htmlType="submit"
+                className="w-100"
+              >
                 Register
               </Button>
-            </Form.Item>
-
-            <Form.Item className="text-center">
-              <img
-                draggable={false}
-                className="handleGoogleLogin"
-                src={logo}
-                onClick={handleGoogleLogin}
-                alt="handleGoogleLogin"
-              />
-            </Form.Item>
-          </Form>
+            </div>
+          </form>
+          <hr />
+          <div className="text-center">
+            Already have an account? <Link to="/login">Sign In</Link>
+          </div>
         </div>
       </div>
     </div>
