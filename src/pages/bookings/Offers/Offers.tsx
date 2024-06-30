@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Offer.css';
+
 const Offers = () => {
   return (
     <div className="row mx-auto " style={{ background: '#E7F1FE' }}>
