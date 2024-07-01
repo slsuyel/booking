@@ -19,115 +19,63 @@ const HeroAnimationSlider = () => {
     const items = slider.querySelectorAll('.item');
     slider.prepend(items[items.length - 1]);
   };
+
+  // Data array containing all items
+  const data = [
+    {
+      name: 'Grand Canyon National Park',
+      description:
+        "Explore the vast and awe-inspiring landscapes of one of the world's most famous natural wonders. Hike along the canyon rim or venture into the depths for breathtaking views.",
+      imageURL:
+        'https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg',
+    },
+    {
+      name: 'New York City',
+      description:
+        'Experience the bustling metropolis that never sleeps. Visit iconic landmarks like Times Square, Central Park, and the Statue of Liberty, and indulge in world-class dining and entertainment.',
+      imageURL:
+        'https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2017-04/7010d1e88b80578f3d4e6fc09c2a2379.jpeg?h=84c61102&itok=7s_epXAP',
+    },
+    {
+      name: 'Yellowstone National Park',
+      description:
+        "Discover the geothermal wonders and wildlife-rich landscapes of America's first national park. Witness Old Faithful erupt and explore the park's vast network of trails.",
+      imageURL:
+        'https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-10/Yellowstone.jpg?h=2a29b199&itok=OpHn5jav',
+    },
+    {
+      name: 'Honolulu, Hawaii',
+      description:
+        'Escape to the tropical paradise of Honolulu, where palm-fringed beaches meet vibrant city life. Relax on Waikiki Beach, hike up Diamond Head, or explore historic Pearl Harbor.',
+      imageURL:
+        'https://santorinidave.com/wp-content/uploads/2023/03/beach-honolulu-oahu-where-to-stay.jpeg',
+    },
+    {
+      name: 'Las Vegas, Nevada',
+      description:
+        'Experience the dazzling lights and entertainment of Las Vegas, known for its casinos, world-class shows, and vibrant nightlife. Explore the Strip and indulge in gourmet dining and shopping.',
+      imageURL:
+        'https://www.nationsonline.org/gallery/USA/Las-Vegas-Mandalay-Bay.jpg',
+    },
+  ];
+
   return (
-    <main className="hr_body rounded">
+    <main className="hr_body rounded ">
       <div className="hr_main">
         <ul className="slider" ref={sliderRef}>
-          <li
-            className="item"
-            style={{
-              backgroundImage:
-                'url("https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg")',
-            }}
-          >
-            <div className="content">
-              <h2 className="title">"Lossless Youths"</h2>
-              <p className="description">
-                {' '}
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
-              <button>Read More</button>
-            </div>
-          </li>
-          <li
-            className="item"
-            style={{
-              backgroundImage: 'url("https://i.redd.it/tc0aqpv92pn21.jpg")',
-            }}
-          >
-            <div className="content">
-              <h2 className="title">"Estrange Bond"</h2>
-              <p className="description">
-                {' '}
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
-              <button>Read More</button>
-            </div>
-          </li>
-          <li
-            className="item"
-            style={{
-              backgroundImage:
-                'url("https://wharferj.files.wordpress.com/2015/11/bio_north.jpg")',
-            }}
-          >
-            <div className="content">
-              <h2 className="title">"The Gate Keeper"</h2>
-              <p className="description">
-                {' '}
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
-              <button>Read More</button>
-            </div>
-          </li>
-          <li
-            className="item"
-            style={{
-              backgroundImage:
-                'url("https://images7.alphacoders.com/878/878663.jpg")',
-            }}
-          >
-            <div className="content">
-              <h2 className="title">"Last Trace Of Us"</h2>
-              <p className="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
-              <button>Read More</button>
-            </div>
-          </li>
-          <li
-            className="item"
-            style={{
-              backgroundImage:
-                'url("https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg")',
-            }}
-          >
-            <div className="content">
-              <h2 className="title">"Urban Decay"</h2>
-              <p className="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
-              <button>Read More</button>
-            </div>
-          </li>
-          <li
-            className="item"
-            style={{
-              backgroundImage:
-                'url("https://da.se/app/uploads/2015/09/simon-december1994.jpg")',
-            }}
-          >
-            <div className="content">
-              <h2 className="title">"The Migration"</h2>
-              <p className="description">
-                {' '}
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
-              <button>Read More</button>
-            </div>
-          </li>
+          {data.map((item, index) => (
+            <li
+              key={index}
+              className="item "
+              style={{ backgroundImage: `url("${item.imageURL}")` }}
+            >
+              <div className="content">
+                <h2 className="title">{item.name}</h2>
+                <p className="description">{item.description}</p>
+                <button>Read More</button>
+              </div>
+            </li>
+          ))}
         </ul>
 
         <nav className="hr_ani_nav">
@@ -135,7 +83,6 @@ const HeroAnimationSlider = () => {
             onClick={handlePrevClick}
             className="fa-solid pre fs-1 fa-circle-chevron-left"
           ></i>
-
           <i
             onClick={handleNextClick}
             className="fa-solid nxt fs-1 fa-circle-chevron-right"
