@@ -26,7 +26,7 @@ const SingleTab = () => {
   return (
     <>
       <div
-        className="hr_content_slick "
+        className="hr_content_slick container mt-5 bg_grad"
         data-aos="fade-up"
         data-aos-duration="1000"
       >

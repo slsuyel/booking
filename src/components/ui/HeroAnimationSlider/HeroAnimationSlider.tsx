@@ -68,8 +68,12 @@ const HeroAnimationSlider = () => {
   ];
 
   return (
-    <main className="hr_body rounded mb-5">
-      <div className="hr_main">
+    <main
+      className="bg_grad hr_body  py-5 rounded"
+      data-aos="fade-down"
+      data-aos-duration="2000"
+    >
+      <div className="hr_main container">
         <ul className="slider" ref={sliderRef}>
           {data.map((item, index) => (
             <li

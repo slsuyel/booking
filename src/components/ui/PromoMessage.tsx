@@ -9,7 +9,7 @@ const PromoMessage = () => {
   };
 
   return (
-    <div className=" container">
+    <div className="">
       {visible && (
         <Alert
           className="rounded-0 border-0 promo-message"

@@ -6,8 +6,7 @@ const Footer = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="p-3 pt-4 text-light rounded-top"
-        style={{ background: '#0c3545' }}
+        className="p-3 pt-4 text-light rounded-top container"
       >
         <div className="row footer_all_service">
           <div className="col-md-3 ">

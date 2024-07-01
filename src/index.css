@@ -15,6 +15,7 @@ body {
     rgb(247, 224, 235),
     rgb(242, 255, 242)
   );
+  /* background: linear-gradient(to right, #f2fff2, #f2fff2, #f4f3ef); */
 }
 
 /* .animated-gradient-background {
@@ -150,15 +151,24 @@ a,
   height: 400px;
 } */
 
-.banner_img_p {
+/* .banner_img_p {
   position: absolute;
   right: -26px;
   z-index: -1;
   border-radius: 48px;
   height: 397px;
+} */
+.banner_img_p {
+  position: absolute;
+  right: 7px;
+  z-index: -1;
+  border-radius: 48px;
+  height: 397px;
+  clip-path: inset(0 0 0 78px);
 }
+
 .search_card {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   color: rgb(0, 24, 51);
   border-radius: 36px 0 0px 36px;
   box-shadow: rgba(0, 0, 0, 0.03) 0px -1px 0px 0px,
@@ -203,8 +213,8 @@ a,
 }
 
 .hr_content_slick {
-  padding: 24px 18px;
-  margin: 31px 0;
+  padding: 31px 18px;
+  /* margin: 31px 0; */
   background-color: rgb(244, 246, 248);
   color: rgb(0, 24, 51);
   border-radius: 16px;

@@ -47,7 +47,7 @@ const Header = () => {
       <Navbar
         expand="lg"
         fixed={isFixed ? undefined : undefined}
-        className={` p-0 py-2 pcln-global-header  ${isFixed ? '' : ''} ${
+        className={` p-0 py-2 pcln-global-heade  ${isFixed ? '' : ''} ${
           isMobile ? 'd-none' : 'd-block'
         }`}
       >

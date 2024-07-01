@@ -38,8 +38,8 @@ const RecentSearch = () => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="container mx-auto my-3 pb-5 px-2 py-3 rounded-5 row w-100"
-      style={{ background: '#e8f2ff' }}
+      className="container mx-auto  py-5 px-2 rounded-5 row w-100"
+      style={{ background: '#e8f2ff', margin: '70px 0px' }}
     >
       <h6 className="fs-3 fw-medium mt-3">Your recent searches</h6>
 
