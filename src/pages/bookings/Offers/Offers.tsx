@@ -9,7 +9,7 @@ const Offers = () => {
       data-aos="fade-up"
       data-aos-duration="1000"
     >
-      <div className="col-md-6 px-4 _offer_contents">
+      <div className="col-md-6 my-2 px-4 _offer_contents">
         <div className="bg-white rounded-3">
           <div className="_offer_contents">
             <div>
@@ -36,7 +36,7 @@ const Offers = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-6 px-4 _offer_contents">
+      <div className="col-md-6 my-2 px-4 _offer_contents">
         <div className="bg-white rounded-3">
           <div className="_offer_contents">
             <div>
