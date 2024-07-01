@@ -5,6 +5,37 @@ body {
   background-color: #c3f1fe38;
 }
 
+.gradient-background {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gradient-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #6ec3f4, #3a3aff, #ff61ab, #bc6047);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s infinite;
+  clip-path: polygon(0% 0%, 0% 103%, 160% 0%);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
 .header-bg-fix {
   background-color: #f5f5ea;
   font-family: 'Montserrat', sans-serif;
@@ -168,7 +199,7 @@ a,
 } */
 .banner_img_p {
   position: absolute;
-  right: 7px;
+  right: 9px;
   z-index: -1;
   border-radius: 48px;
   height: 397px;
@@ -176,12 +207,17 @@ a,
 }
 
 .search_card {
-  /* background-color: rgb(255, 255, 255); */
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+  box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.1),
+    0 50px 100px -20px rgba(50, 50, 93, 0.25),
+    0 30px 60px -30px rgb(226 219 219 / 30%);
+
   color: rgb(0, 24, 51);
   border-radius: 36px 0 0px 36px;
-  box-shadow: rgba(0, 0, 0, 0.03) 0px -1px 0px 0px,
-    rgba(0, 0, 0, 0.16) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 10px 8px -5px,
-    rgba(0, 0, 0, 0.16) 0px 12px 32px -2px;
+
   min-height: 397px;
   height: auto;
 }

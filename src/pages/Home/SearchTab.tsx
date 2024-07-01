@@ -26,7 +26,7 @@ const SearchTab = () => {
   };
 
   return (
-    <div className="col-md-7 search_card mx-auto mb-auto  pt-4 ">
+    <div className="col-md-7 search_card mx-auto mb-auto  pt-4 s_bx_bg">
       <div className="d-flex gap-1 my-2 justify-content-around">
         <button
           className={`align-items-center d-flex item_tab_btn ${

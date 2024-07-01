@@ -17,8 +17,9 @@ const MainLayout = () => {
   return (
     <ScrollToTop>
       <PromoMessage />
+
       <main className="">
-        <div className="bg_grad ">
+        <div className="gradient-background">
           <Header />
           {location.pathname == '/' && (
             <div

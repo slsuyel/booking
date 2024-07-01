@@ -64,7 +64,7 @@ const Header = () => {
               <NavLink
                 key={item.id}
                 to={item.link}
-                className="nav-link  px-2 fs-6 "
+                className="nav-link  px-2 fs-6 text-white"
               >
                 {item.label}
               </NavLink>
