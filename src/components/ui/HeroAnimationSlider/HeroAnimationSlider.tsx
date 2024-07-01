@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './HeroAnimationSlider.css';
 
 const HeroAnimationSlider = () => {
@@ -19,6 +19,14 @@ const HeroAnimationSlider = () => {
     const items = slider.querySelectorAll('.item');
     slider.prepend(items[items.length - 1]);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextClick();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Data array containing all items
   const data = [
@@ -60,7 +68,7 @@ const HeroAnimationSlider = () => {
   ];
 
   return (
-    <main className="hr_body rounded ">
+    <main className="hr_body rounded mb-5">
       <div className="hr_main">
         <ul className="slider" ref={sliderRef}>
           {data.map((item, index) => (

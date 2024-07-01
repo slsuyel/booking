@@ -9,6 +9,13 @@ body {
   background-color: #f5f5ea;
   font-family: 'Montserrat', sans-serif;
 }
+.bg_grad {
+  background: linear-gradient(
+    to right bottom,
+    rgb(247, 224, 235),
+    rgb(242, 255, 242)
+  );
+}
 
 /* .animated-gradient-background {
   background: linear-gradient(116deg, #13a8fa, #378ad5b0, #3fcdfb, #23d5abde);
