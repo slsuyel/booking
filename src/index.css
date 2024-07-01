@@ -301,24 +301,26 @@ a,
 @media screen and (min-width: 768px) {
   /* HorizontalScroll----------Slick */
 
-  .slick-dots {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    margin: 2px;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    bottom: auto;
-    right: -98%;
-  }
+  .hr_slick_home {
+    .slick-dots {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      margin: 2px;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      bottom: auto;
+      right: -98%;
+    }
 
-  ul.slick-dots li {
-    display: block;
-  }
+    ul.slick-dots li {
+      display: block;
+    }
 
-  .slick-dots li button:before {
-    font-size: 16px;
+    .slick-dots li button:before {
+      font-size: 16px;
+    }
   }
 }

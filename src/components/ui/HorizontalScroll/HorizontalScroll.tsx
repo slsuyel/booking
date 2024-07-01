@@ -85,7 +85,7 @@ const HorizontalScroll = () => {
   };
 
   return (
-    <div className="container overflow-hidden">
+    <div className="container overflow-hidden hr_slick_home">
       <Slider autoplay {...settings}>
         {data.map((item, index) => (
           <section key={index} className="hr_content_slick">
