@@ -64,17 +64,17 @@ const Header = () => {
               <NavLink
                 key={item.id}
                 to={item.link}
-                className="nav-link  px-2 fw-medium "
+                className="nav-link  px-2 fs-6 "
               >
                 {item.label}
               </NavLink>
             ))}
           </Navbar.Collapse>
           <>
-            <button className="fw-medium item_tab_btn mx-1 text-uppercase">
+            <button className="fs-6 item_tab_btn mx-1 text-uppercase">
               <i className="fa-solid fa-circle-info"></i> Help
             </button>
-            <button className="fw-medium item_tab_btn mx-1 text-uppercase">
+            <button className="fs-6 item_tab_btn mx-1 text-uppercase">
               <i className="fa-solid fa-magnifying-glass"></i> Find My Trip
             </button>
           </>

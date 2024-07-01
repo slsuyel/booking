@@ -23,7 +23,7 @@ const Offers = () => {
                 />
               </div>
 
-              <div className="ps-3">
+              <div className="ps-3 bg-img">
                 <h6 className=" my-2 text-secondary" style={{ fontSize: 14 }}>
                   AMERICA'S CRUISE SALE
                 </h6>
@@ -50,7 +50,7 @@ const Offers = () => {
                 />
               </div>
 
-              <div className="ps-3">
+              <div className="ps-3 bg-img">
                 <h6 className=" my-2 text-secondary" style={{ fontSize: 14 }}>
                   AMERICA'S CRUISE SALE
                 </h6>

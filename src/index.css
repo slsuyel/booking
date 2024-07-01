@@ -15,7 +15,15 @@ body {
     rgb(247, 224, 235),
     rgb(242, 255, 242)
   );
+
   /* background: linear-gradient(to right, #f2fff2, #f2fff2, #f4f3ef); */
+}
+
+.bg-img {
+  /* background-image: url(https://vezitadoc.com/wp-content/uploads/2022/09/sec2bg-shape1.webp); */
+  background-image: url(https://saas-landing-page-zenui.netlify.app/assets/union3-Du7GrRwd.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* .animated-gradient-background {

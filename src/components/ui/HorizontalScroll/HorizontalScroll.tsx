@@ -94,7 +94,7 @@ const HorizontalScroll = () => {
         {data.map((item, index) => (
           <section key={index} className="hr_content_slick">
             <div className=" row mx-auto text-black">
-              <div className="col-md-6 my-1 position-relative ">
+              <div className="col-md-6 my-1 position-relative bg-img">
                 <div className="pt-5">
                   <p className="_vip">{item.title}</p>
                   <h2 className="">{item.subtitle}</h2>
@@ -108,7 +108,7 @@ const HorizontalScroll = () => {
                 <p className="_min_p">{item.eligibility}</p>
               </div>
 
-              <div className="col-md-6 my-1 d-flex justify-content-end">
+              <div className="col-md-6 my-1 d-flex justify-content-end ">
                 <img
                   className="img-fluid rounded rounded-4 w-100"
                   src={item.image}

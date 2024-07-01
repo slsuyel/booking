@@ -53,7 +53,7 @@ const TimeCardScroll = () => {
     <div
       data-aos="fade-down"
       data-aos-duration="2000"
-      className=" row mx-auto bg_time_card position-relative container"
+      className=" row mx-auto my-5 bg_time_card position-relative container"
       style={{ backgroundImage: `url(${activeData.image})` }}
     >
       <div className="overlay"></div>

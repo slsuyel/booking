@@ -38,8 +38,8 @@ const RecentSearch = () => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="container mx-auto  py-5 px-2 rounded-5 row w-100"
-      style={{ background: '#e8f2ff', margin: '70px 0px' }}
+      className="container mx-auto  py-5 px-2 rounded row w-100 bg-img"
+      style={{ /* background: '#e8f2ff', */ margin: '70px 0px' }}
     >
       <h6 className="fs-3 fw-medium mt-3">Your recent searches</h6>
 
@@ -56,7 +56,7 @@ const RecentSearch = () => {
 
         return (
           <div className="col-md-3 my-2" key={index}>
-            <div className="card p-2 rounded-4 shadow">
+            <div className="card p-2 py-4 shadow-sm">
               <Link
                 className="align-items-center d-flex justify-content-between text-decoration-none "
                 to={`/hotel-search?${params}`}
