@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 import Slider from 'react-slick';
 import './TimeCardScroll.css';
@@ -18,7 +18,7 @@ const TimeCardScroll = () => {
     slidesToScroll: 1,
     initialSlide: 0,
 
-    beforeChange: (current, next) => setActiveSlide(next),
+    beforeChange: (next: SetStateAction<number>) => setActiveSlide(next),
     responsive: [
       {
         breakpoint: 1024,
