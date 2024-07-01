@@ -1,28 +1,24 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import './HeroAnimationSlider.css';
 
 const HeroAnimationSlider = () => {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    const activate = e => {
-      const slider = sliderRef.current;
-      if (!slider) return;
+  const handleNextClick = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-      const items = slider.querySelectorAll('.item');
-      if (e.target.matches('.next')) {
-        slider.append(items[0]);
-      } else if (e.target.matches('.prev')) {
-        slider.prepend(items[items.length - 1]);
-      }
-    };
+    const items = slider.querySelectorAll('.item');
+    slider.append(items[0]);
+  };
 
-    document.addEventListener('click', activate);
-    return () => {
-      document.removeEventListener('click', activate);
-    };
-  }, []);
+  const handlePrevClick = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
 
+    const items = slider.querySelectorAll('.item');
+    slider.prepend(items[items.length - 1]);
+  };
   return (
     <main className="hr_body rounded">
       <div className="hr_main">
@@ -133,14 +129,17 @@ const HeroAnimationSlider = () => {
             </div>
           </li>
         </ul>
-        <nav className="nav">
-          <button className="btn prev" name="arrow-back-outline">
-            {' '}
-            + {/* Replace with your icon or text */}
-          </button>
-          <button className="btn next" name="arrow-forward-outline">
-            - {/* Replace with your icon or text */}
-          </button>
+
+        <nav className="hr_ani_nav">
+          <i
+            onClick={handlePrevClick}
+            className="fa-solid pre fs-1 fa-circle-chevron-left"
+          ></i>
+
+          <i
+            onClick={handleNextClick}
+            className="fa-solid nxt fs-1 fa-circle-chevron-right"
+          ></i>
         </nav>
       </div>
     </main>
