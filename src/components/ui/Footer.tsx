@@ -22,19 +22,23 @@ const Footer = () => {
 
             {/* Social Media Links */}
             <div className="d-flex">
-              <a href="#" className="text-white me-3">
+              <a target="_blank" href="#" className="text-white me-3">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" className="text-white me-3">
+              <a target="_blank" href="#" className="text-white me-3">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="text-white me-3">
+              <a target="_blank" href="#" className="text-white me-3">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="text-white me-3">
+              <a target="_blank" href="#" className="text-white me-3">
                 <i className="fab fa-youtube"></i>
               </a>
-              <a href="#" className="text-white">
+              <a
+                target="_blank"
+                href="#"
+                className="text-white text-decoration-none"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>
@@ -44,13 +48,69 @@ const Footer = () => {
           <div className="col-md-3 my-1">
             <h5 className="text-uppercase mb-3">Umrah Package List</h5>
             <ul className="list-unstyled">
-              <li>October package 2024</li>
-              <li>Summer package 2024</li>
-              <li>September package 2024</li>
-              <li>7 days gold package</li>
-              <li>10 days standard package</li>
-              <li>14 days premium package</li>
-              <li>21 days gold package</li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//october-package-2024/"
+                  className="text-white text-decoration-none"
+                >
+                  October package 2024
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//summer-package-2024/"
+                  className="text-white text-decoration-none"
+                >
+                  Summer package 2024
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//september-package-2024/"
+                  className="text-white text-decoration-none"
+                >
+                  September package 2024
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//7-days-gold-package/"
+                  className="text-white text-decoration-none"
+                >
+                  7 days gold package
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//10-days-standard-package/"
+                  className="text-white text-decoration-none"
+                >
+                  10 days standard package
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//14-days-premium-package/"
+                  className="text-white text-decoration-none"
+                >
+                  14 days premium package
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//21-days-gold-package/"
+                  className="text-white text-decoration-none"
+                >
+                  21 days gold package
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -59,37 +119,65 @@ const Footer = () => {
             <h5 className="text-uppercase mb-3">Our Useful Links</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="#"
+                  className="text-white text-decoration-none"
+                >
                   Flight Ticket
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="#"
+                  className="text-white text-decoration-none"
+                >
                   Hotel booking
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//"
+                  className="text-white text-decoration-none"
+                >
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//about/"
+                  className="text-white text-decoration-none"
+                >
                   Who we are
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//get-a-quote/"
+                  className="text-white text-decoration-none"
+                >
                   Get a Quote
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//contact/"
+                  className="text-white text-decoration-none"
+                >
                   Contact us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="https://rahmaniatravel.com//privacy-we-care/"
+                  className="text-white text-decoration-none"
+                >
                   Privacy notice
                 </a>
               </li>

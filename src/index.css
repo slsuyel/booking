@@ -1,8 +1,8 @@
-/* src/index.scss or src/App.scss */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 body {
   background-color: #c3f1fe38;
+  font-family: 'Space Grotesk', serif;
 }
 
 .gradient-background {
@@ -38,7 +38,7 @@ body {
 
 .header-bg-fix {
   background-color: #f5f5ea;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Space Grotesk', serif;
 }
 .bg_grad {
   background: linear-gradient(
@@ -120,7 +120,7 @@ input,
 textarea,
 a,
 .ant-btn {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Space Grotesk', serif;
 }
 
 :where(.css-dev-only-do-not-override-kghr11).ant-picker .ant-picker-suffix {

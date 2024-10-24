@@ -12,7 +12,7 @@ const Header = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    setIsFixed(offset > 0);
+    setIsFixed(offset > 0 && window.innerWidth > 768);
   };
 
   useEffect(() => {
@@ -236,13 +236,13 @@ const Header = () => {
         <div className="header-buttons d-flex justify-content-center">
           <Link
             to={`/b/flights`}
-            className="text-decoration-none  header-btn mx-1 text-uppercase"
+            className="text-decoration-none header-btn mx-1 text-uppercase"
           >
             <i className="fa-solid fa-plane-circle-check"></i> Flight Ticket
           </Link>
           <Link
             to={`/b/hotels`}
-            className="text-decoration-none  header-btn mx-1 text-uppercase"
+            className="text-decoration-none header-btn mx-1 text-uppercase"
           >
             <i className="fa-solid fa-magnifying-glass"></i> Hotel booking
           </Link>

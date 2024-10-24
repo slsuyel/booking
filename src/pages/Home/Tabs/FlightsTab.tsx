@@ -179,6 +179,9 @@ const FlightsTab = () => {
 
         <div className="col-md-6 my-2">
           <DatePicker
+            disabledDate={current =>
+              current && current.startOf('day').isBefore(new Date())
+            }
             required
             style={{ width: '100%', height: 50, marginBottom: 16 }}
             onChange={handleDateChange as any}
