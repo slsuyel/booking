@@ -35,7 +35,7 @@ const SearchTab = () => {
           }`}
           onClick={() => setActiveTab('hotels')}
         >
-          <i className="d-none d-sm-block pe-2 fas fa-hotel"></i> Hotels
+          <i className="d-none d-sm-block pe-2 fas fa-hotel"></i> Hotels s
         </button>
         <button
           className={`align-items-center d-flex item_tab_btn ${
