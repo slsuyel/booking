@@ -161,8 +161,8 @@ a,
   border-radius: 20px;
   padding: 6px 12px;
   font-size: 18px;
-  border: 2px solid #007bff;
-  color: #007bff;
+  border: 2px solid #0053a3;
+  color: #0053a3;
   background: #f6f6f6;
 }
 
@@ -171,7 +171,7 @@ a,
 }
 
 .item_tab_btn.active {
-  background-color: #007bff;
+  background-color: #0053a3;
   color: white;
   border: 2px solid #ebe5ff;
 }
@@ -317,7 +317,7 @@ a,
     border-radius: 17px;
     padding: 1px 11px;
     font-size: 13px;
-    border: 2px solid #007bff;
+    border: 2px solid #0053a3;
   }
 
   .hr_content_slick {
@@ -384,4 +384,80 @@ a,
       font-size: 16px;
     }
   }
+}
+
+.ct-footer_rrr {
+  background-position: 0% 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(
+      rgba(0, 84, 163, 0.56),
+      rgba(0, 84, 163, 0.56)
+    ),
+    url(https://rahmaniatravel.com/wp-content/uploads/2024/05/fbg.jpg);
+}
+.custom-navbar {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  transition: all 0.3s ease;
+}
+
+.stylish-link {
+  color: #000;
+  transition: color 0.3s ease;
+}
+.nav_itm_a {
+  font-size: 17px !important;
+}
+
+.stylish-link:hover {
+  color: #0053a3;
+}
+
+.header-btn {
+  background-color: #0053a3;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.header-btn:hover {
+  background-color: #0053a3;
+}
+
+.mobile-header {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-drawer .mobile-menu-items {
+  padding: 20px;
+}
+
+.drawer-link {
+  color: #333;
+  margin-bottom: 20px;
+}
+a.nav-link.px-3.stylish-link.active {
+  color: #0d6efd;
 }

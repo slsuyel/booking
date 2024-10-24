@@ -2,7 +2,7 @@ import { Checkbox, DatePicker, Form, Select, TimePicker } from 'antd';
 import useCities from '../../../hooks/useCities';
 import { CitySearch } from '../../../types/types';
 import { useState } from 'react';
-import SButton from '../../../components/reusable/Button';
+
 const { Option } = Select;
 
 const CarsTab = () => {
@@ -43,7 +43,7 @@ const CarsTab = () => {
   }
 
   return (
-    <Form form={form}>
+    <Form form={form} className="col-md-11 mx-auto">
       <div className="row mx-auto">
         <div
           className={`${isDifferentLocation ? 'col-md-6' : 'col-md-12'} mt-2`}
@@ -165,8 +165,10 @@ const CarsTab = () => {
             car
           </div>
         </div>
-        <div className="col-md-6 my-2 btn_find">
-          <SButton onClick={handleSearch}>Find Your Car</SButton>
+        <div className="col-md-6 my-2 ">
+          <button className="header-btn w-100" onClick={handleSearch}>
+            Find Your Car
+          </button>
         </div>
       </div>
     </Form>

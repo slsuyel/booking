@@ -11,6 +11,7 @@ import Scroll from '../components/ui/Scroll/Scroll';
 import SingleTab from '../pages/bookings/TabBar/SingleTab';
 import TimeCardScroll from '../components/ui/TimeCardScroll/TimeCardScroll';
 import HeroAnimationSlider from '../components/ui/HeroAnimationSlider/HeroAnimationSlider';
+import BookingResults from '../pages/bookings/BookingSearch/BookingResults';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/booking-results',
+        element: <BookingResults />,
       },
 
       {

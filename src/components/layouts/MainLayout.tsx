@@ -1,14 +1,14 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import ScrollToTop from '../../utils/ScrollToTop';
 import Header from './../ui/Header';
 import Footer from './../ui/Footer';
 import { GoToTop } from 'go-to-top-react';
-import PromoMessage from '../ui/PromoMessage';
+
 import { useEffect } from 'react';
 import AOS from 'aos';
-import SearchTab from '../../pages/Home/SearchTab';
+// import SearchTab from '../../pages/Home/SearchTab';
 const MainLayout = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
   useEffect(() => {
     AOS.init();
@@ -16,11 +16,11 @@ const MainLayout = () => {
 
   return (
     <ScrollToTop>
-      <PromoMessage />
+      {/* <PromoMessage /> */}
 
       <main className="">
-        <div className="gradient-background">
-          <Header />
+        <Header />
+        {/* <div className="">
           {location.pathname == '/' && (
             <div
               className=" row mx-auto position-relative py-5 container"
@@ -37,15 +37,13 @@ const MainLayout = () => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
         <div style={{ minHeight: '70vh' }}>
           <Outlet />
         </div>
         <GoToTop />
-        <div className="position-relative " style={{ background: '#0c3545' }}>
-          <Footer />
-        </div>
+        <Footer />
       </main>
     </ScrollToTop>
   );

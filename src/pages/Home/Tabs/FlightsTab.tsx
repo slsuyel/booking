@@ -13,7 +13,6 @@ import { UserOutlined, TeamOutlined } from '@ant-design/icons';
 import useAirports from '../../../hooks/useAirports';
 import { Spinner } from 'react-bootstrap';
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
-import SButton from '../../../components/reusable/Button';
 
 const { Option } = Select;
 
@@ -110,132 +109,138 @@ const FlightsTab = () => {
   }
 
   return (
-    <div className="row mx-auto">
-      <div className="d-flex gap-1 mt-2">
-        <div className="">
-          <Radio.Group
-            defaultValue={1}
-            style={{ marginBottom: 16 }}
-            onChange={handleRadioChange as any}
-          >
-            <Radio value={1}>One-way</Radio>
-            <Radio value={2}>Round-trip</Radio>
-            <Radio disabled value={3}>
-              Multi-city
-            </Radio>
-          </Radio.Group>
+    <div className="col-md-11 mx-auto">
+      <div className="row mx-auto">
+        <div className="d-flex gap-1 mt-2">
+          <div className="">
+            <Radio.Group
+              defaultValue={1}
+              style={{ marginBottom: 16 }}
+              onChange={handleRadioChange as any}
+            >
+              <Radio value={1}>One-way</Radio>
+              <Radio value={2}>Round-trip</Radio>
+              <Radio disabled value={3}>
+                Multi-city
+              </Radio>
+            </Radio.Group>
+          </div>
+          <div>
+            <Select
+              showSearch
+              placeholder="Select Class"
+              onChange={handleFlightClassChange}
+              value={searchValue.flight_class}
+            >
+              <Option value="first">First Class</Option>
+              <Option value="business">Business Class</Option>
+              <Option value="premium-economy">Premium Economy</Option>
+              <Option value="economy">Economy Class</Option>
+            </Select>
+          </div>
         </div>
-        <div>
+
+        <div className="col-md-6">
           <Select
             showSearch
-            placeholder="Select Class"
-            onChange={handleFlightClassChange}
-            value={searchValue.flight_class}
+            // className="p3selc"
+            placeholder="Departure From"
+            optionFilterProp="children"
+            style={{ width: '100%', height: 50, marginBottom: 16 }}
+            onChange={handleDepartureChange}
+            value={searchValue.departure}
           >
-            <Option value="first">First Class</Option>
-            <Option value="business">Business Class</Option>
-            <Option value="premium-economy">Premium Economy</Option>
-            <Option value="economy">Economy Class</Option>
+            {data.map((d: Airport) => (
+              <Option key={d.name} value={d.name}>
+                <i className=" pe-2 fas fa-plane"></i> {d.iata} - {d.name},{' '}
+                {d.country}
+              </Option>
+            ))}
           </Select>
         </div>
-      </div>
-
-      <div className="col-md-6">
-        <Select
-          showSearch
-          // className="p3selc"
-          placeholder="Departure From"
-          optionFilterProp="children"
-          style={{ width: '100%', height: 50, marginBottom: 16 }}
-          onChange={handleDepartureChange}
-          value={searchValue.departure}
-        >
-          {data.map((d: Airport) => (
-            <Option key={d.name} value={d.name}>
-              <i className=" pe-2 fas fa-plane"></i> {d.iata} - {d.name},{' '}
-              {d.country}
-            </Option>
-          ))}
-        </Select>
-      </div>
-      <div className="col-md-6">
-        <Select
-          showSearch
-          // className="p3selc"
-          placeholder="Going to"
-          optionFilterProp="children"
-          style={{ width: '100%', height: 50, marginBottom: 16 }}
-          onChange={handleDestinationChange}
-          value={searchValue.destination}
-        >
-          {data.map((d: Airport) => (
-            <Option key={d.name} value={d.name}>
-              <i className=" pe-2 fas fa-plane"></i> {d.iata} - {d.name},{' '}
-              {d.country}
-            </Option>
-          ))}
-        </Select>
-      </div>
-
-      <div className="col-md-6 my-2">
-        <DatePicker
-          required
-          style={{ width: '100%', height: 50, marginBottom: 16 }}
-          onChange={handleDateChange as any}
-          placeholder="Journey Date"
-        />
-      </div>
-
-      <div className="col-md-6 my-2 position-relative">
-        <Button
-          style={{ width: '100%', height: 50 }}
-          size="large"
-          type="primary"
-          className="toggle-btn-child-adult w-100"
-          onClick={toggleSection}
-        >
-          <span className="text-dark">
-            <UserOutlined /> {searchValue.adults} Adult · <TeamOutlined />{' '}
-            {searchValue.children} Children
-          </span>
-        </Button>
-        {isSectionOpen && (
-          <div
-            className="card p-3 mt-2 position-absolute w-100"
-            style={{ zIndex: 200, top: 'calc(60% + 20px)', left: '0px' }}
+        <div className="col-md-6">
+          <Select
+            showSearch
+            // className="p3selc"
+            placeholder="Going to"
+            optionFilterProp="children"
+            style={{ width: '100%', height: 50, marginBottom: 16 }}
+            onChange={handleDestinationChange}
+            value={searchValue.destination}
           >
-            <InputNumber
-              defaultValue={searchValue.adults}
-              min={1}
-              style={{ width: '100%', marginBottom: '8px' }}
-              addonBefore={<UserOutlined />}
-              onChange={handleAdultsChange as any}
-            />
-            <InputNumber
-              defaultValue={searchValue.children}
-              min={0}
-              style={{ width: '100%', marginBottom: '8px' }}
-              addonBefore={<TeamOutlined />}
-              onChange={handleChildrenChange as any}
-            />
-            <Button className="mt-2" onClick={toggleSection}>
-              Ok
-            </Button>
-          </div>
-        )}
-      </div>
-
-      <div className="col-md-6 my-2 my-auto">
-        <div
-          className="align-items-center border d-flex gap-1 ps-4 rounded text-primary"
-          style={{ height: 50, background: '#ddeefd' }}
-        >
-          Bundle + Save <Checkbox onChange={handleAddCar}></Checkbox> Add a car
+            {data.map((d: Airport) => (
+              <Option key={d.name} value={d.name}>
+                <i className=" pe-2 fas fa-plane"></i> {d.iata} - {d.name},{' '}
+                {d.country}
+              </Option>
+            ))}
+          </Select>
         </div>
-      </div>
 
-      <div className="col-md-6 my-2 btn_find">
-        <SButton onClick={handleSearch}> Search Flights </SButton>
+        <div className="col-md-6 my-2">
+          <DatePicker
+            required
+            style={{ width: '100%', height: 50, marginBottom: 16 }}
+            onChange={handleDateChange as any}
+            placeholder="Journey Date"
+          />
+        </div>
+
+        <div className="col-md-6 my-2 position-relative">
+          <Button
+            style={{ width: '100%', height: 50 }}
+            size="large"
+            type="primary"
+            className="toggle-btn-child-adult w-100"
+            onClick={toggleSection}
+          >
+            <span className="text-dark">
+              <UserOutlined /> {searchValue.adults} Adult · <TeamOutlined />{' '}
+              {searchValue.children} Children
+            </span>
+          </Button>
+          {isSectionOpen && (
+            <div
+              className="card p-3 mt-2 position-absolute w-100"
+              style={{ zIndex: 200, top: 'calc(60% + 20px)', left: '0px' }}
+            >
+              <InputNumber
+                defaultValue={searchValue.adults}
+                min={1}
+                style={{ width: '100%', marginBottom: '8px' }}
+                addonBefore={<UserOutlined />}
+                onChange={handleAdultsChange as any}
+              />
+              <InputNumber
+                defaultValue={searchValue.children}
+                min={0}
+                style={{ width: '100%', marginBottom: '8px' }}
+                addonBefore={<TeamOutlined />}
+                onChange={handleChildrenChange as any}
+              />
+              <Button className="mt-2" onClick={toggleSection}>
+                Ok
+              </Button>
+            </div>
+          )}
+        </div>
+
+        <div className="col-md-6 my-2 my-auto">
+          <div
+            className="align-items-center border d-flex gap-1 ps-4 rounded text-primary"
+            style={{ height: 50, background: '#ddeefd' }}
+          >
+            Bundle + Save <Checkbox onChange={handleAddCar}></Checkbox> Add a
+            car
+          </div>
+        </div>
+
+        <div className="col-md-6 my-2 ">
+          <button className="header-btn w-100" onClick={handleSearch}>
+            {' '}
+            Search Flights{' '}
+          </button>
+        </div>
       </div>
     </div>
   );

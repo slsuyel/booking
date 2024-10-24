@@ -1,11 +1,5 @@
-import BookingSearch from '../../bookings/BookingSearch/BookingSearch';
-
 const HotelsTab = () => {
-  return (
-    <div>
-      <BookingSearch />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default HotelsTab;
