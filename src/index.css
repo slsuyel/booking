@@ -220,6 +220,7 @@ a,
 
   min-height: 397px;
   height: auto;
+  padding: 0 8px;
 }
 
 .layout-container {
@@ -435,6 +436,14 @@ a,
   font-weight: 500;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .header-btn {
+    padding: 6px 8px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
 }
 
 .header-btn:hover {

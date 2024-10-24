@@ -56,7 +56,7 @@ const SearchTab = () => {
         </button>
 
         <button
-          className={`align-items-center d-flex item_tab_btn ${
+          className={` align-items-center d-flex item_tab_btn ${
             activeTab === 'bundle_save' ? 'active' : ''
           }`}
           onClick={() => setActiveTab('bundle_save')}
